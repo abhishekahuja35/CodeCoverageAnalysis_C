@@ -1,0 +1,425 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Nov  7 22:34:50 2022)
+Data file(s) used     : MON.dat (Mon Nov  7 22:35:04 2022)
+Listing produced at   : Mon Nov  7 22:40:17 2022
+Coverage view         : As instrumented
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/printtokens2/versions.alt/versions.orig/v10/print_tokens2.c
+INSTRUMENTATION MODE  : multicondition
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+      4115                 21 FUNCTION main()
+      2955       1160      27   if (argc == 1)
+                           31   }+
+      1130         30      32   else if (argc == 2)
+                           33   }+
+                           34   else
+                           37   }+
+     19096       4055      40   while (is_eof_token ( tok ) == 0)
+                           44   }+
+         0            -    47 }
+
+***TER  87 % (  7/  8) of FUNCTION main()
+       100 % ( 17/ 17) statement
+-----------------------------------------------------------------------------
+
+      4085                 59 FUNCTION open_character_stream()
+      2955       1130      62   if (fname == ( ( void * ) 0 ))
+                           63   }+
+        30       1100      64   else if (( fp = fopen ( fname , "r" ) ) == ( ( void * ) 0 ))
+                           68   }+
+      4055                 69   return ( fp )
+                           70 }
+
+***TER 100 % (  6/  6) of FUNCTION open_character_stream()
+       100 % (  7/  7) statement
+-----------------------------------------------------------------------------
+
+    158391                 77 FUNCTION get_char()
+    158391                 81   return ( ch )
+                           82 }
+
+***TER 100 % (  2/  2) of FUNCTION get_char()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+      3405                 90 FUNCTION unget_char()
+       759       2646      95   if (c == ( - 1 ))
+       759                 97     return ( c )
+                           98   }+
+                           99   else
+      2646                100     return ( c )
+                          100   }-
+                          101 }
+
+***TER 100 % (  5/  5) of FUNCTION unget_char()
+       100 % (  5/  5) statement
+-----------------------------------------------------------------------------
+
+      4085                127 FUNCTION open_token_stream()
+      2955       1130     131   if (strcmp ( fname , "" ) == 0)
+                          132   }+
+                          133   else
+                          134   }+
+      4055                135   return ( fp )
+                          136 }
+
+***TER 100 % (  4/  4) of FUNCTION open_token_stream()
+       100 % (  5/  5) statement
+-----------------------------------------------------------------------------
+
+     23151                145 FUNCTION get_token()
+   1875231      23151     151   for (;j <= 80;)
+                          152   }+
+     31764      23151     156   while (ch == ' ' || ch == '\n')
+     29063                156     1: T || _
+      2701                156     2: F || T
+                23151     156     3: F || F
+                          159   }+
+      4055      19096     161   if (is_eof_token ( buffer ) == 1)
+      4055                161     return ( buffer )
+                          161   }+
+      4804      14292     162   if (is_spec_symbol ( buffer ) == 1)
+      4804                162     return ( buffer )
+                          162   }+
+      1563      12729     163   if (ch == '"')
+                          163   }+
+      1922      12370     164   if (ch == 59)
+                          164   }+
+     89184      14292     167   while (is_token_end ( id , ch ) == 0)
+                          172   }+
+       759      13533     174   if (is_eof_token ( ch1 ) == 1)
+       759          0 -   176     if (ch == ( - 1 ))
+                          176     }+
+       759                177     return ( buffer )
+                          178   }+
+      2375      11158     179   if (is_spec_symbol ( ch1 ) == 1)
+         0       2375 -   181     if (ch == ( - 1 ))
+                          181     }+
+      2375                182     return ( buffer )
+                          183   }+
+      1530       9628     184   if (id == 1)
+      1530                187     return ( buffer )
+                          188   }+
+       271       9357     189   if (id == 0 && ch == 59)
+       271                189     1: T && T
+                 7481     189     2: T && F
+                 1876     189     3: F && _
+         0        271 -   192     if (ch == ( - 1 ))
+                          192     }+
+       271                193     return ( buffer )
+                          194   }+
+      9357                195   return ( buffer )
+                          196 }
+
+***TER  92 % ( 39/ 42) of FUNCTION get_token()
+        95 % ( 45/ 47) statement
+-----------------------------------------------------------------------------
+
+    103476                203 FUNCTION is_token_end()
+       759     102717     209   if (is_eof_token ( ch1 ) == 1)
+       759                209     return ( 1 )
+                          209   }+
+     21503      81214     210   if (str_com_id == 1)
+      1530      19973     211     if (ch == '"' | ch == '\n')
+      1530                212       return ( 1 )
+                          212     }+
+                          213     else
+     19973                214       return ( 0 )
+                          214     }-
+                          215   }+
+     19215      61999     217   if (str_com_id == 2)
+      1876      17339     218     if (ch == '\n')
+      1876                219       return ( 1 )
+                          219     }+
+                          220     else
+     17339                221       return ( 0 )
+                          221     }-
+                          222   }+
+      2375      59624     224   if (is_spec_symbol ( ch1 ) == 1)
+      2375                224     return ( 1 )
+                          224   }+
+      7752      51872     225   if (ch == ' ' || ch == '\n' || ch == 59)
+      5240                225     1: T || _ || _
+      2241                225     2: F || T || _
+       271                225     3: F || F || T
+                51872     225     4: F || F || F
+      7752                225     return ( 1 )
+                          225   }+
+     51872                227   return ( 0 )
+                          228 }
+
+***TER 100 % ( 27/ 27) of FUNCTION is_token_end()
+       100 % ( 18/ 18) statement
+-----------------------------------------------------------------------------
+
+     23151                237 FUNCTION token_type()
+      2337      20814     240   if (is_keyword ( tok ))
+      2337                240     return ( 1 )
+                          240   }+
+      4804      16010     241   if (is_spec_symbol ( tok ))
+      4804                241     return ( 2 )
+                          241   }+
+      2786      13224     242   if (is_identifier ( tok ))
+      2786                242     return ( 3 )
+                          242   }+
+      1253      11971     243   if (is_num_constant ( tok ))
+      1253                243     return ( 41 )
+                          243   }+
+      1563      10408     244   if (is_str_constant ( tok ))
+      1563                244     return ( 42 )
+                          244   }+
+       553       9855     245   if (is_char_constant ( tok ))
+       553                245     return ( 43 )
+                          245   }+
+      1922       7933     246   if (is_comment ( tok ))
+      1922                246     return ( 5 )
+                          246   }+
+      4055       3878     247   if (is_eof_token ( tok ))
+      4055                247     return ( 6 )
+                          247   }+
+      3878                248   return ( 0 )
+                          249 }
+
+***TER 100 % ( 26/ 26) of FUNCTION token_type()
+       100 % ( 17/ 17) statement
+-----------------------------------------------------------------------------
+
+     23151                257 FUNCTION print_token()
+      3878      19273     261   if (type == 0)
+                          263   }+
+      2337      20814     264   if (type == 1)
+                          266   }+
+      4804      18347     267   if (type == 2)
+                          267   }+
+      2786      20365     268   if (type == 3)
+                          270   }+
+      1253      21898     271   if (type == 41)
+                          273   }+
+      1563      21588     274   if (type == 42)
+                          276   }+
+       553      22598     277   if (type == 43)
+                          280   }+
+      4055      19096     281   if (type == 6)
+                          282   }+
+     23151                283 }
+
+***TER 100 % ( 18/ 18) of FUNCTION print_token()
+       100 % ( 19/ 19) statement
+-----------------------------------------------------------------------------
+
+    172003                292 FUNCTION is_eof_token()
+     13683     158320     295   if (* tok == ( - 1 ))
+     13683                296     return ( 1 )
+                          296   }+
+                          297   else
+    158320                298     return ( 0 )
+                          298   }-
+                          299 }
+
+***TER 100 % (  5/  5) of FUNCTION is_eof_token()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+      9855                306 FUNCTION is_comment()
+      1922       7933     309   if (( * ident ) == 59)
+      1922                310     return ( 1 )
+                          310   }+
+                          311   else
+      7933                312     return ( 0 )
+                          312   }-
+                          313 }
+
+***TER 100 % (  5/  5) of FUNCTION is_comment()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+     23151                320 FUNCTION is_keyword()
+      2337      20814     324   if (! strcmp ( str , "and" ) || ! strcmp ( str , "or" ) || ! strcmp ( str , "if" ) || ! strcmp ( str , "xor" ) || ! strcmp ( str , "lambda" ) || ! strcmp ( str , "=>" ))
+       402                324     1: T || _ || _ || _ || _ || _
+       373                324     2: F || T || _ || _ || _ || _
+       364                324     3: F || F || T || _ || _ || _
+       395                324     4: F || F || F || T || _ || _
+       407                324     5: F || F || F || F || T || _
+       396                324     6: F || F || F || F || F || T
+                20814     324     7: F || F || F || F || F || F
+      2337                325     return ( 1 )
+                          325   }+
+                          326   else
+     20814                327     return ( 0 )
+                          327   }-
+                          328 }
+
+***TER 100 % ( 12/ 12) of FUNCTION is_keyword()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+     10408                335 FUNCTION is_char_constant()
+       553       9855     338   if (( * str ) == '#' && isalpha ( * ( str + 1 ) ))
+       553                338     1: T && T
+                  431     338     2: T && F
+                 9424     338     3: F && _
+       553                339     return ( 1 )
+                          339   }+
+                          340   else
+      9855                341     return ( 0 )
+                          341   }-
+                          342 }
+
+***TER 100 % (  8/  8) of FUNCTION is_char_constant()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+     13224                349 FUNCTION is_num_constant()
+      1638      11586     354   if (isdigit ( * str ))
+      1304       1253     356     while (* ( str + i ) != '\0')
+       919        385     358       if (isdigit ( * ( str + i ) ))
+                          359       }+
+                          360       else
+       385                361         return ( 0 )
+                          361       }+
+                          362     }+
+      1253                363     return ( 1 )
+                          364   }+
+                          365   else
+     11586                366     return ( 0 )
+                          366   }-
+                          367 }
+
+***TER 100 % ( 10/ 10) of FUNCTION is_num_constant()
+       100 % (  8/  8) statement
+-----------------------------------------------------------------------------
+
+     11971                374 FUNCTION is_str_constant()
+      1563      10408     379   if (* str == '"')
+   2171510          0 -   380     while (* ( str ) != '\0')
+      1563    2169947     381       if (* ( str + i ) == '"')
+      1563                382         return ( 1 )
+                          382       }+
+                          383       else
+                          384       }+
+                          385     }-
+         0            -   386     return ( 0 )
+                          387   }+
+                          388   else
+     10408                389     return ( 0 )
+                          389   }-
+                          390 }
+
+***TER  80 % (  8/ 10) of FUNCTION is_str_constant()
+        87 % (  7/  8) statement
+-----------------------------------------------------------------------------
+
+     16010                396 FUNCTION is_identifier()
+      4412      11598     401   if (isalpha ( * str ))
+     19410       2786     403     while (* ( str + i ) != '\0')
+     17784       1626     405       if (isalpha ( * ( str + i ) ) || isdigit ( * ( str + i ) ))
+     11083                405         1: T || _
+      6701                405         2: F || T
+                 1626     405         3: F || F
+                          406       }+
+                          407       else
+      1626                408         return ( 0 )
+                          408       }+
+                          409     }+
+      2786                410     return ( 1 )
+                          411   }+
+                          412   else
+     11598                413     return ( 0 )
+                          413   }-
+                          414 }
+
+***TER 100 % ( 13/ 13) of FUNCTION is_identifier()
+       100 % (  8/  8) statement
+-----------------------------------------------------------------------------
+
+       759                421 FUNCTION unget_error()
+       759                425 }
+
+***TER 100 % (  2/  2) of FUNCTION unget_error()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+      4804                433 FUNCTION print_spec_symbol()
+       630       4174     436   if (! strcmp ( str , "(" ))
+       630                439     return
+                          440   }+
+       690       3484     441   if (! strcmp ( str , ")" ))
+       690                444     return
+                          445   }+
+       679       2805     446   if (! strcmp ( str , "[" ))
+       679                449     return
+                          450   }+
+       736       2069     451   if (! strcmp ( str , "]" ))
+       736                454     return
+                          455   }+
+       676       1393     456   if (! strcmp ( str , "'" ))
+       676                459     return
+                          460   }+
+       707        686     461   if (! strcmp ( str , "`" ))
+       707                464     return
+                          465   }+
+       686                468 }
+
+***TER 100 % ( 20/ 20) of FUNCTION print_spec_symbol()
+       100 % ( 19/ 19) statement
+-----------------------------------------------------------------------------
+
+    115442                476 FUNCTION is_spec_symbol()
+      1862     113580     479   if (! strcmp ( str , "(" ))
+      1862                481     return ( 1 )
+                          482   }+
+      2026     111554     483   if (! strcmp ( str , ")" ))
+      2026                485     return ( 1 )
+                          486   }+
+      2050     109504     487   if (! strcmp ( str , "[" ))
+      2050                489     return ( 1 )
+                          490   }+
+      2192     107312     491   if (! strcmp ( str , "]" ))
+      2192                493     return ( 1 )
+                          494   }+
+      2026     105286     495   if (! strcmp ( str , "'" ))
+      2026                497     return ( 1 )
+                          498   }+
+      2108     103178     499   if (! strcmp ( str , "`" ))
+      2108                501     return ( 1 )
+                          502   }+
+      2094     101084     503   if (! strcmp ( str , "," ))
+      2094                505     return ( 1 )
+                          506   }+
+    101084                507   return ( 0 )
+                          508 }
+
+***TER 100 % ( 23/ 23) of FUNCTION is_spec_symbol()
+       100 % ( 15/ 15) statement
+-----------------------------------------------------------------------------
+
+
+***TER  97 % (240/246) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/printtokens2/versions.alt/versions.orig/v10/print_tokens2.c
+        98 % (206/209) statement
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 19
+Source lines       : 508
+TER                : 97 % (240/246) multicondition
+TER                : 98 % (206/209) statement

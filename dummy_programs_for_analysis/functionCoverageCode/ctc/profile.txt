@@ -1,0 +1,41 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Dec  5 01:34:05 2022)
+Data file(s) used     : MON.dat (Mon Dec  5 01:34:12 2022)
+Listing produced at   : Mon Dec  5 01:34:26 2022
+Coverage view         : Reduced to function coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal_3/Trial/functionCoverageCode/sampleCode_2.c
+INSTRUMENTATION MODE  : function
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+         1                  3 FUNCTION dummy_call()
+         1                  8 FUNCTION main()
+
+***TER 100 % (  2/  2) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal_3/Trial/functionCoverageCode/sampleCode_2.c
+       100 % (  0/  0) statement (N.A. for 2 functions)
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 2
+Source lines       : 16
+TER                : 100 % (2/2) function
+TER                : 100 % (0/0) statement (N.A. for 2 functions)

@@ -1,0 +1,57 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Nov  7 17:18:45 2022)
+Data file(s) used     : MON.dat (Mon Nov  7 17:18:59 2022)
+Listing produced at   : Mon Nov  7 19:31:22 2022
+Coverage view         : Reduced to function coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule/versions.alt/versions.orig/v9/schedule.c
+INSTRUMENTATION MODE  : function
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+     40489                 38 FUNCTION new_ele()
+      9670                 56 FUNCTION new_list()
+     61463                 73 FUNCTION append_ele()
+     12573                 95 FUNCTION find_nth()
+     52374                116 FUNCTION del_ele()
+     31400                141 FUNCTION free_ele()
+     42243                154 FUNCTION finish_process()
+     10930                166 FUNCTION finish_all_processes()
+     66209                175 FUNCTION schedule()
+     11787                192 FUNCTION upgrade_process_prio()
+     12500                221 FUNCTION unblock_process()
+     11866                242 FUNCTION quantum_expire()
+     12100                254 FUNCTION block_process()
+     40489                263 FUNCTION new_process()
+     12956                273 FUNCTION add_process()
+      7860                281 FUNCTION init_prio_queue()
+      2620                298 FUNCTION initialize()
+      2627                305 FUNCTION main()
+
+***TER 100 % ( 18/ 18) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule/versions.alt/versions.orig/v9/schedule.c
+       100 % (  0/  0) statement (N.A. for 18 functions)
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 18
+Source lines       : 368
+TER                : 100 % (18/18) function
+TER                : 100 % (0/0) statement (N.A. for 18 functions)

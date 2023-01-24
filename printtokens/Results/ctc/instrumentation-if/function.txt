@@ -1,0 +1,57 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Nov  7 21:43:17 2022)
+Data file(s) used     : MON.dat (Mon Nov  7 21:44:15 2022)
+Listing produced at   : Mon Nov  7 21:44:33 2022
+Coverage view         : Reduced to function coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/printtokens/versions.alt/versions.orig/v7/print_tokens.c
+INSTRUMENTATION MODE  : function
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+      4130                 25 FUNCTION main()
+      4100                 60 FUNCTION open_character_stream()
+    175168                 89 FUNCTION get_char()
+     28823                112 FUNCTION is_end_of_character_stream()
+     14196                131 FUNCTION unget_char()
+      4100                155 FUNCTION open_token_stream()
+     32932                179 FUNCTION get_token()
+      2542                268 FUNCTION numeric_case()
+     11126                306 FUNCTION error_or_eof_case()
+      7155                339 FUNCTION check_delimiter()
+      2179                356 FUNCTION keyword()
+      5031                381 FUNCTION special()
+      1893                410 FUNCTION skip()
+      3593                431 FUNCTION constant()
+    235379                454 FUNCTION next_state()
+     32932                481 FUNCTION is_eof_token()
+     32932                503 FUNCTION print_token()
+     21652                547 FUNCTION get_actual_token()
+
+***TER 100 % ( 18/ 18) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/printtokens/versions.alt/versions.orig/v7/print_tokens.c
+       100 % (  0/  0) statement (N.A. for 18 functions)
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 18
+Source lines       : 563
+TER                : 100 % (18/18) function
+TER                : 100 % (0/0) statement (N.A. for 18 functions)

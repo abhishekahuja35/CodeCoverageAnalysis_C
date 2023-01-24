@@ -1,0 +1,270 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Nov  7 20:25:02 2022)
+Data file(s) used     : MON.dat (Mon Nov  7 20:25:43 2022)
+Listing produced at   : Mon Nov  7 20:26:06 2022
+Coverage view         : Reduced to decision coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c
+INSTRUMENTATION MODE  : multicondition
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+     62145                 23 FUNCTION enqueue()
+     62145                 29   return ( reschedule ( prio ) )
+                           30 }
+
+***TER 100 % (  2/  2) of FUNCTION enqueue()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+      2710                 42 FUNCTION main()
+        31       2679      50   if (argc != 3 + 1)
+                           50   }+
+      8007       2649      51   for (;prio > 0;)
+        30       7977      53     if (( nprocs = atoi ( argv [ 3 + 1 - prio ] ) ) < 0)
+                           53     }+
+     27758       7977      54     for (;nprocs > 0;)
+         0      27758 -    56       if (status = new_job ( prio ))
+                           56       }+
+                           57     }+
+                           58   }+
+     87794       2649      60   while (( status = get_command ( & command , & prio , & ratio ) ) > 0)
+                           63   }+
+         0       2649 -    64   if (status < 0)
+                           64   }+
+         0            -    66 }
+
+***TER  81 % ( 13/ 16) of FUNCTION main()
+        90 % ( 19/ 21) statement
+-----------------------------------------------------------------------------
+
+     90443                 69 FUNCTION get_command()
+     87794       2649      75   if (fgets ( buf , 20 , __stdinp ))
+                           79     switch (* command)
+     13594                 81     case 1:
+     13594                 83       break
+     13134                 84     case 4:
+     13134                 86       break
+     12314                 87     case 2:
+     12314                 89       break
+     48752                 90     missing-default:
+                           90     }+
+       212      87794      92     while (buf [ strlen ( buf ) - 1 ] != '\n' && fgets ( buf , 20 , __stdinp ))
+                           92     }+
+     87794                 93     return ( 1 )
+                           94   }+
+                           95   else
+      2649                 95     return ( 0 )
+                           95   }-
+                           96 }
+
+***TER 100 % ( 14/ 14) of FUNCTION get_command()
+       100 % ( 17/ 17) statement
+-----------------------------------------------------------------------------
+
+      2710                 98 FUNCTION exit_here()
+         0            -   102 }
+
+***TER  50 % (  1/  2) of FUNCTION exit_here()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+     41352                106 FUNCTION new_job()
+         0      41352 -   113   if (! new_process)
+                          113   }+
+                          114   else
+         0      41352 -   120     if (status)
+                          123     }+
+                          124   }+
+         0      41352 -   125   if (status)
+                          125   }+
+     41352                126   return ( status )
+                          127 }
+
+***TER  62 % (  5/  8) of FUNCTION new_job()
+        80 % ( 12/ 15) statement
+-----------------------------------------------------------------------------
+
+     12314                129 FUNCTION upgrade_prio()
+      1145      11169     135   if (prio < 1 || prio > 2)
+      1145                135     return ( - 4 )
+                          135   }+
+      8577       2592     136   if (( status = get_process ( prio , ratio , & job ) ) <= 0)
+      8577                136     return ( status )
+                          136   }+
+      2592                139   return ( enqueue ( prio + 1 , job ) )
+                          140 }
+
+***TER 100 % (  8/  8) of FUNCTION upgrade_prio()
+       100 % (  8/  8) statement
+-----------------------------------------------------------------------------
+
+     12700                143 FUNCTION block()
+      6633       6067     147   if (job)
+      6633                150     return ( enqueue ( 0 , job ) )
+                          151   }+
+      6067                152   return ( 0 )
+                          153 }
+
+***TER 100 % (  5/  5) of FUNCTION block()
+       100 % (  6/  6) statement
+-----------------------------------------------------------------------------
+
+     13134                156 FUNCTION unblock()
+      8077       5057     161   if (( status = get_process ( 0 , ratio , & job ) ) <= 0)
+      8077                161     return ( status )
+                          161   }+
+      5057                163   return ( enqueue ( job -> priority , job ) )
+                          164 }
+
+***TER 100 % (  5/  5) of FUNCTION unblock()
+       100 % (  5/  5) statement
+-----------------------------------------------------------------------------
+
+     12358                167 FUNCTION quantum_expire()
+      6511       5847     171   if (job)
+      6511                174     return ( enqueue ( job -> priority , job ) )
+                          175   }+
+      5847                176   return ( 0 )
+                          177 }
+
+***TER 100 % (  5/  5) of FUNCTION quantum_expire()
+       100 % (  6/  6) statement
+-----------------------------------------------------------------------------
+
+     48538                180 FUNCTION finish()
+     32489      16049     184   if (job)
+     32489                190     return ( 0 )
+                          191   }+
+                          192   else
+     16049                192     return ( 1 )
+                          192   }-
+                          193 }
+
+***TER 100 % (  5/  5) of FUNCTION finish()
+       100 % (  9/  9) statement
+-----------------------------------------------------------------------------
+
+     11525                196 FUNCTION flush()
+     28218      11525     198   while (! finish ( ))
+                          198   }+
+     11525                200   return ( 0 )
+                          201 }
+
+***TER 100 % (  4/  4) of FUNCTION flush()
+       100 % (  4/  4) statement
+-----------------------------------------------------------------------------
+
+    168230                204 FUNCTION get_current()
+     87481      80749     207   if (! current_job)
+    205744      38029     209     for (;prio > 0;)
+     49452     156292     211       if (get_process ( prio , 0.0 , & current_job ) > 0)
+     49452                211         break
+                          211       }+
+                          212     }+
+                          213   }+
+    168230                214   return ( current_job )
+                          215 }
+
+***TER 100 % (  9/  9) of FUNCTION get_current()
+       100 % (  8/  8) statement
+-----------------------------------------------------------------------------
+
+     94634                218 FUNCTION reschedule()
+      2342      92292     221   if (current_job && prio > current_job -> priority)
+                          225   }+
+     94634                227   return ( 0 )
+                          228 }
+
+***TER 100 % (  4/  4) of FUNCTION reschedule()
+       100 % (  5/  5) statement
+-----------------------------------------------------------------------------
+
+     87794                231 FUNCTION schedule()
+                          236   switch (command)
+     13594                238   case 1:
+     13594                240     break
+     12358                241   case 5:
+     12358                243     break
+     12314                244   case 2:
+     12314                246     break
+     12700                247   case 3:
+     12700                249     break
+     13134                250   case 4:
+     13134                252     break
+      8795                253   case 6:
+      8795                256     break
+     11525                257   case 7:
+     11525                259     break
+      3374                260   default:
+                          262   }+
+     87794                263   return ( status )
+                          264 }
+
+***TER 100 % ( 17/ 17) of FUNCTION schedule()
+       100 % ( 19/ 19) statement
+-----------------------------------------------------------------------------
+
+     64487                270 FUNCTION put_end()
+       167      64320     275   if (prio > 3 || prio < 0)
+       167                275     return ( - 4 )
+                          275   }+
+     91923      64320     277   for (;* next;)
+                          277   }+
+     64320                280   return ( 0 )
+                          281 }
+
+***TER 100 % (  7/  7) of FUNCTION put_end()
+       100 % ( 10/ 10) statement
+-----------------------------------------------------------------------------
+
+    230047                284 FUNCTION get_process()
+         0     230047 -   291   if (prio > 3 || prio < 0)
+         0            -   291     return ( - 4 )
+                          291   }+
+       271     229776     292   if (ratio < 0.0 || ratio > 1.0)
+       271                292     return ( - 5 )
+                          292   }+
+    172714      57062     295   ternary-?: index >= length
+      4451     229776     296   for (;index && * next;)
+                          297   }+
+     57101     172675     299   if (* job)
+     57101                304     return ( 1 )
+                          305   }+
+                          306   else
+    172675                306     return ( 0 )
+                          306   }-
+                          307 }
+
+***TER  86 % ( 13/ 15) of FUNCTION get_process()
+        95 % ( 19/ 20) statement
+-----------------------------------------------------------------------------
+
+
+***TER  92 % (117/126) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c
+        96 % (151/157) statement
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 16
+Source lines       : 307
+TER                : 92 % (117/126) decision
+TER                : 96 % (151/157) statement

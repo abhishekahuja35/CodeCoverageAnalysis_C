@@ -1,0 +1,33 @@
+CTC++ sym 9
+Sun Nov  6 23:03:28 2022
+@/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/tcas/versions.alt/versions.orig/v41/tcas.c
+1 1667793808 FEB3F253 0 0
+0 48 0 0 0 initialize
+90 0 0 0 0 ( )
+2 54 4 0 0 initialize
+0 56 0 1 0 ALIM
+90 0 0 0 0 ( )
+2 59 1 0 0 ALIM
+0 61 0 2 0 Inhibit_Biased_Climb
+90 0 0 0 0 ( )
+2 64 1 0 0 Inhibit_Biased_Climb
+0 66 0 3 0 Non_Crossing_Biased_Climb
+90 0 0 0 0 ( )
+2 82 7 0 0 Non_Crossing_Biased_Climb
+0 84 0 4 0 Non_Crossing_Biased_Descend
+90 0 0 0 0 ( )
+2 100 7 0 0 Non_Crossing_Biased_Descend
+0 102 0 5 0 Own_Below_Threat
+90 0 0 0 0 ( )
+2 105 1 0 0 Own_Below_Threat
+0 107 0 6 0 Own_Above_Threat
+90 0 0 0 0 ( )
+2 110 1 0 0 Own_Above_Threat
+0 112 0 7 0 alt_sep_test
+90 0 0 0 0 ( )
+2 142 14 0 0 alt_sep_test
+0 144 0 8 0 main
+90 0 0 0 0 ( argc , argv )
+2 173 21 0 0 main
+%173,9,0,0,0,0
+END OF SYMBOLFILE

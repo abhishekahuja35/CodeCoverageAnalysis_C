@@ -1,0 +1,63 @@
+CTC++ sym 9
+Mon Nov  7 22:30:05 2022
+@/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/printtokens2/versions.alt/versions.orig/v10/print_tokens2.c
+1 1667878205 4FEB8BEF 0 0
+0 21 0 0 0 main
+90 0 0 0 0 ( argc , argv )
+2 47 14 0 0 main
+0 59 0 1 0 open_character_stream
+90 0 0 0 0 ( )
+2 70 5 0 0 open_character_stream
+0 77 0 2 0 get_char
+90 0 0 0 0 ( )
+2 82 3 0 0 get_char
+0 90 0 3 0 unget_char
+90 0 0 0 0 ( )
+2 101 4 0 0 unget_char
+0 127 0 4 0 open_token_stream
+90 0 0 0 0 ( )
+2 136 4 0 0 open_token_stream
+0 145 0 5 0 get_token
+90 0 0 0 0 ( )
+2 196 33 0 0 get_token
+0 203 0 6 0 is_token_end
+90 0 0 0 0 ( str_com_id , ch )
+2 228 11 0 0 is_token_end
+0 237 0 7 0 token_type
+90 0 0 0 0 ( )
+2 249 9 0 0 token_type
+0 257 0 8 0 print_token
+90 0 0 0 0 ( )
+2 283 11 0 0 print_token
+0 292 0 9 0 is_eof_token
+90 0 0 0 0 ( )
+2 299 2 0 0 is_eof_token
+0 306 0 10 0 is_comment
+90 0 0 0 0 ( )
+2 313 2 0 0 is_comment
+0 320 0 11 0 is_keyword
+90 0 0 0 0 ( )
+2 328 2 0 0 is_keyword
+0 335 0 12 0 is_char_constant
+90 0 0 0 0 ( )
+2 342 2 0 0 is_char_constant
+0 349 0 13 0 is_num_constant
+90 0 0 0 0 ( )
+2 367 5 0 0 is_num_constant
+0 374 0 14 0 is_str_constant
+90 0 0 0 0 ( )
+2 390 5 0 0 is_str_constant
+0 396 0 15 0 is_identifier
+90 0 0 0 0 ( )
+2 414 5 0 0 is_identifier
+0 421 0 16 0 unget_error
+90 0 0 0 0 ( )
+2 425 1 0 0 unget_error
+0 433 0 17 0 print_spec_symbol
+90 0 0 0 0 ( )
+2 468 13 0 0 print_spec_symbol
+0 476 0 18 0 is_spec_symbol
+90 0 0 0 0 ( )
+2 508 8 0 0 is_spec_symbol
+%508,19,0,0,0,0
+END OF SYMBOLFILE

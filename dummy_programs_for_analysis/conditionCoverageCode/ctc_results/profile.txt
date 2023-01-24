@@ -1,0 +1,67 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Tue Dec  6 01:47:25 2022)
+Data file(s) used     : MON.dat (Tue Dec  6 01:47:53 2022)
+Listing produced at   : Tue Dec  6 01:48:30 2022
+Coverage view         : Reduced to condition coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal_3/Trial/conditionCoverageCode/sample_condition.c
+INSTRUMENTATION MODE  : multicondition
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+         1                  4 FUNCTION deciding_function()
+         1          0 -     6   if (d == 1)
+                            9   }+
+         0          1 -    10   if (e == 1)
+         0            -    12     return 1
+                           13   }+
+         0          1 -    14   if (f == 1)
+                           17   }+
+                           18 }
+
+***TER  50 % (  4/  8) of FUNCTION deciding_function()
+        66 % (  4/  6) statement
+-----------------------------------------------------------------------------
+
+         1                 20 FUNCTION end_function()
+         1                 23 }
+
+***TER 100 % (  2/  2) of FUNCTION end_function()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+         1                 25 FUNCTION main()
+         1                 32 }
+
+***TER 100 % (  2/  2) of FUNCTION main()
+       100 % (  5/  5) statement
+-----------------------------------------------------------------------------
+
+
+***TER  66 % (  8/ 12) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal_3/Trial/conditionCoverageCode/sample_condition.c
+        83 % ( 10/ 12) statement
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 3
+Source lines       : 32
+TER                : 66 % (8/12) condition
+TER                : 83 % (10/12) statement

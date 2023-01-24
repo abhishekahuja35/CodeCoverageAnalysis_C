@@ -1,0 +1,12 @@
+CTC++ sym 9
+Mon Dec  5 01:34:05 2022
+@/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal_3/Trial/functionCoverageCode/sampleCode_2.c
+1 1670222045 43450B8C 0 0
+0 3 0 0 0 dummy_call
+90 0 0 0 0 ( int b )
+2 6 1 0 0 dummy_call
+0 8 0 1 0 main
+90 0 0 0 0 ( )
+2 16 3 0 0 main
+%16,2,0,0,0,0
+END OF SYMBOLFILE

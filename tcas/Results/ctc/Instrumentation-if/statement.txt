@@ -1,0 +1,48 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Sun Nov  6 23:03:28 2022)
+Data file(s) used     : MON.dat (Sun Nov  6 23:03:59 2022)
+Listing produced at   : Sun Nov  6 23:06:46 2022
+Coverage view         : Reduced to function coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/tcas/versions.alt/versions.orig/v41/tcas.c
+INSTRUMENTATION MODE  : function
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+      1578                 48 FUNCTION initialize()
+      1291                 56 FUNCTION ALIM()
+      1772                 61 FUNCTION Inhibit_Biased_Climb()
+       886                 66 FUNCTION Non_Crossing_Biased_Climb()
+       886                 84 FUNCTION Non_Crossing_Biased_Descend()
+      1725                102 FUNCTION Own_Below_Threat()
+      1113                107 FUNCTION Own_Above_Threat()
+      1578                112 FUNCTION alt_sep_test()
+      1608                144 FUNCTION main()
+
+***TER 100 % (  9/  9) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/tcas/versions.alt/versions.orig/v41/tcas.c
+       100 % (  0/  0) statement (N.A. for 9 functions)
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 9
+Source lines       : 173
+TER                : 100 % (9/9) function
+TER                : 100 % (0/0) statement (N.A. for 9 functions)

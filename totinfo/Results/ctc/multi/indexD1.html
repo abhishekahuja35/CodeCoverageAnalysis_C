@@ -1,0 +1,466 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>CTC++ Coverage Report - Execution Profile - tot_info.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keyword" content="CTC++, Testwell, Test Coverage Analyzer">
+<meta name="date" content="Mon Nov 7 16:42:12 2022">
+<meta name="generator" content="Testwell CTC++ add-on utility ctc2html v9.1.4.1">
+<link href="index.html" rel="contents">
+<link href="ctc.css" rel="stylesheet" type="text/css">
+<script src="ctc.js" type="text/javascript"></script>
+<script src="sorttable.js" type="text/javascript"></script>
+<script src="own_javascript.js" type="text/javascript"></script>
+</head>
+<body>
+<span class="reportb">CTC++ Coverage Report</span><span class="report">- Execution Profile</span><span class="info">#1/1</span><br><br>
+<span class="pages"><a href="indexF.html" target="_top">Directory Summary</a> | <a href="index.html" target="_top">Files Summary</a> | <a href="indexB1.html" target="_top">Functions Summary</a> | <a href="indexU.html" target="_top">Untested Code</a> | <a href="indexD1.html">Execution Profile</a><br>
+To files: <a href="indexD1.html">First</a> | Previous | Next | <a href="indexD1.html">Last</a> | <a href="indexA.html#a1">Index</a> | <a href="indexD1.html" target="_top">No Index</a></span><br><br>
+<span class="infob">Source file:</span><span class="infob">/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c</span><br>
+<span class="infob">Instrumentation mode:</span><span class="info">multicondition</span><br>
+<span class="infob">TER:</span><span class="below">90 % (106/117) structural,</span><span class="below">97 % (153/157) statement</span><br><br>
+<table class="execution">
+<thead>
+<tr><th>Hits/True</th><th>False</th><th><a href="indexD1.html#ut1" title="First untested">Line</a></th><th>Source</th></tr>
+</thead>
+<tbody>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">1</td><td><span class="lineplain"><span class="comment">/*</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">2</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">tot_info&nbsp;--&nbsp;combine&nbsp;information&nbsp;statistics&nbsp;for&nbsp;multiple&nbsp;tables</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">3</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">4</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">last&nbsp;edit:&nbsp;&nbsp;&nbsp;89/02/06&nbsp;&nbsp;&nbsp;D&nbsp;A&nbsp;Gwyn</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">5</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">6</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">SCCS&nbsp;ID:&nbsp;&nbsp;&nbsp;@(#)tot_info.c&nbsp;&nbsp;&nbsp;1.1&nbsp;(edited&nbsp;for&nbsp;publication)</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">7</td><td><span class="lineplain"><span class="comment">*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">8</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">9</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;&lt;ctype.h&gt;</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">10</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;&lt;stdio.h&gt;</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">11</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">12</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;"std.h"</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">13</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">14</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;"chisq.h"</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">15</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;"gamma.h"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/*&nbsp;for&nbsp;QChiSq()&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">16</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">17</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">18</td><td><span class="lineplain"><span class="preproc">#define&nbsp;&nbsp;&nbsp;MAXLINE&nbsp;&nbsp;&nbsp;256</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">19</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">20</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">21</td><td><span class="lineplain"><span class="preproc">#ifndef&nbsp;MAXTBL</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">22</td><td><span class="lineplain"><span class="preproc">#define&nbsp;&nbsp;&nbsp;MAXTBL&nbsp;&nbsp;&nbsp;1000</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">23</td><td><span class="lineplain"><span class="preproc">#endif</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">24</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">25</td><td><span class="lineplain"><span class="keyword">static</span>&nbsp;<span class="keyword">char</span>&nbsp;line[MAXLINE];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;row/column&nbsp;header&nbsp;input&nbsp;line&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">26</td><td><span class="lineplain"><span class="keyword">static</span>&nbsp;<span class="keyword">long</span>&nbsp;f[MAXTBL];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;frequency&nbsp;tallies&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">27</td><td><span class="lineplain"><span class="keyword">static</span>&nbsp;<span class="keyword">int</span>&nbsp;r;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;#&nbsp;of&nbsp;rows&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">28</td><td><span class="lineplain"><span class="keyword">static</span>&nbsp;<span class="keyword">int</span>&nbsp;c;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;#&nbsp;of&nbsp;columns&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">29</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">30</td><td><span class="lineplain"><span class="preproc">#define&nbsp;&nbsp;&nbsp;x(i,j)&nbsp;&nbsp;&nbsp;f[(i)*c+(j)]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/*&nbsp;convenient&nbsp;way&nbsp;to&nbsp;access&nbsp;freqs&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">31</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">32</td><td><span class="lineplain"><span class="preproc">#define&nbsp;&nbsp;&nbsp;COMMENT&nbsp;&nbsp;&nbsp;'#'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/*&nbsp;comment&nbsp;character&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">33</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">34</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">35</td><td><span class="lineplain"><span class="preproc">#ifndef&nbsp;NULL</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">36</td><td><span class="lineplain"><span class="preproc">#define&nbsp;NULL&nbsp;0</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">37</td><td><span class="lineplain"><span class="preproc">#endif</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">38</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">39</td><td><span class="lineplain"><span class="comment">/*ARGSUSED*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">40</td><td><span class="lineplain"><span class="keyword">int</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a1"></a> 1052</td><td class="profile"></td><td class="profile_line">41</td><td><span class="linehit">main(&nbsp;argc,&nbsp;argv&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">42</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;&nbsp;argc;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">43</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">char</span>&nbsp;&nbsp;*argv[];</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">44</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">45</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">char</span>&nbsp;*p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;input&nbsp;line&nbsp;scan&nbsp;location&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">46</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;i;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;row&nbsp;index&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">47</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;j;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;column&nbsp;index&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">48</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;info;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;computed&nbsp;information&nbsp;measure&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">49</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;&nbsp;infodf;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;degrees&nbsp;of&nbsp;freedom&nbsp;for&nbsp;information&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">50</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;totinfo&nbsp;=&nbsp;0.0;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;accumulated&nbsp;information&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">51</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;&nbsp;totdf;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;accumulated&nbsp;degrees&nbsp;of&nbsp;freedom&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">52</td><td><span class="lineplain">&nbsp;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">53</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totdf&nbsp;=&nbsp;0;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">54</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 8310</td><td class="profile"> 679</td><td class="profile_line">55</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>&nbsp;(&nbsp;fgets(&nbsp;line,&nbsp;MAXLINE,&nbsp;stdin&nbsp;)&nbsp;!=&nbsp;NULL&nbsp;)&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;start&nbsp;new&nbsp;table&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">56</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile"> 6544</td><td class="profile"> 8310</td><td class="profile_line">57</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;p&nbsp;=&nbsp;line;&nbsp;*p&nbsp;!=&nbsp;<span class="string">'\0'</span>&nbsp;&amp;&amp;&nbsp;isspace(&nbsp;(<span class="keyword">int</span>)*p&nbsp;);&nbsp;++p&nbsp;)</span></td></tr>
+<tr><td class="profile"> 6544</td><td class="profile"></td><td class="profile_line">57</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1: T &amp;&amp; T</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 4607</td><td class="profile_line">57</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2: T &amp;&amp; F</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 3703</td><td class="profile_line">57</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3: F &amp;&amp; _</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">58</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">59</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 3703</td><td class="profile"> 4607</td><td class="profile_line">60</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;*p&nbsp;==&nbsp;<span class="string">'\0'</span>&nbsp;)</span></td></tr>
+<tr><td class="profile"> 3703</td><td class="profile"></td><td class="profile_line">61</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span>;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;skip&nbsp;blank&nbsp;line&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">62</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 1453</td><td class="profile"> 3154</td><td class="profile_line">63</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;*p&nbsp;==&nbsp;COMMENT&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">64</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;copy&nbsp;comment&nbsp;through&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">65</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">void</span>)fputs(&nbsp;line,&nbsp;stdout&nbsp;);</span></td></tr>
+<tr><td class="profile"> 1453</td><td class="profile"></td><td class="profile_line">66</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">continue</span>;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">67</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">68</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 76</td><td class="profile"> 3078</td><td class="profile_line">69</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;sscanf(&nbsp;p,&nbsp;<span class="string">"%d&nbsp;%d\n"</span>,&nbsp;&amp;r,&nbsp;&amp;c&nbsp;)&nbsp;!=&nbsp;2&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">70</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">71</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">void</span>)fputs(&nbsp;<span class="string">"*&nbsp;invalid&nbsp;row/column&nbsp;line&nbsp;*\n"</span>,&nbsp;stdout&nbsp;);</span></td></tr>
+<tr><td class="profile"> 76</td><td class="profile"></td><td class="profile_line">72</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;EXIT_FAILURE;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">73</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">74</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 191</td><td class="profile"> 2887</td><td class="profile_line">75</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;r&nbsp;*&nbsp;c&nbsp;&gt;&nbsp;MAXTBL&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">76</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">77</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">void</span>)fputs(&nbsp;<span class="string">"*&nbsp;table&nbsp;too&nbsp;large&nbsp;*\n"</span>,&nbsp;stdout&nbsp;);</span></td></tr>
+<tr><td class="profile"> 191</td><td class="profile"></td><td class="profile_line">78</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;EXIT_FAILURE;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">79</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">80</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">81</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;input&nbsp;tallies&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">82</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 19972</td><td class="profile"> 2781</td><td class="profile_line">83</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;r;&nbsp;++i&nbsp;)</span></td></tr>
+<tr><td class="profile"> 201224</td><td class="profile"> 19866</td><td class="profile_line">84</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;c;&nbsp;++j&nbsp;)</span></td></tr>
+<tr><td class="profile"> 106</td><td class="profile"> 201118</td><td class="profile_line">85</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;scanf(&nbsp;<span class="string">"&nbsp;%ld"</span>,&nbsp;&amp;x(i,j)&nbsp;)&nbsp;!=&nbsp;1&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">86</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">87</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">void</span>)fputs(&nbsp;<span class="string">"*&nbsp;EOF&nbsp;in&nbsp;table&nbsp;*\n"</span>,</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">88</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stdout</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">89</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></td></tr>
+<tr><td class="profile"> 106</td><td class="profile"></td><td class="profile_line">90</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;EXIT_FAILURE;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">91</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">92</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">93</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;compute&nbsp;statistic&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">94</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">95</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;=&nbsp;InfoTbl(&nbsp;r,&nbsp;c,&nbsp;f,&nbsp;&amp;infodf&nbsp;);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">96</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">97</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;print&nbsp;results&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">98</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 1803</td><td class="profile"> 978</td><td class="profile_line">99</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;info&nbsp;&gt;=&nbsp;0.0&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">100</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">101</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">void</span>)printf(&nbsp;<span class="string">"2info&nbsp;=&nbsp;%5.2f\tdf&nbsp;=&nbsp;%2d\tq&nbsp;=&nbsp;%7.4f\n"</span>,</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">102</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info,&nbsp;infodf,</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">103</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QChiSq(&nbsp;info,&nbsp;infodf&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">104</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">105</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totinfo&nbsp;+=&nbsp;info;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">106</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totdf&nbsp;+=&nbsp;infodf;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">107</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">108</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span></span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 978</td><td class="profile_line"><a href="indexD1.html#ut2" id="ut1">109</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">void</span>)fputs(&nbsp;info&nbsp;&lt;&nbsp;-3.5&nbsp;?&nbsp;<span class="string">"out&nbsp;of&nbsp;memory\n"</span></span></td></tr>
+<tr><td class="profile"> 357</td><td class="profile"> 621</td><td class="profile_line">110</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;info&nbsp;&lt;&nbsp;-2.5&nbsp;?&nbsp;<span class="string">"table&nbsp;too&nbsp;small\n"</span></span></td></tr>
+<tr><td class="profile"> 179</td><td class="profile"> 442</td><td class="profile_line">111</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;info&nbsp;&lt;&nbsp;-1.5&nbsp;?&nbsp;<span class="string">"negative&nbsp;freq\n"</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">112</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<span class="string">"table&nbsp;all&nbsp;zeros\n"</span>,</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">113</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stdout</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">114</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">115</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">116</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 165</td><td class="profile"> 514</td><td class="profile_line">117</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;totdf&nbsp;&lt;=&nbsp;0&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">118</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">119</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">void</span>)fputs(&nbsp;<span class="string">"\n***&nbsp;no&nbsp;information&nbsp;accumulated&nbsp;***\n"</span>,&nbsp;stdout&nbsp;);</span></td></tr>
+<tr><td class="profile"> 165</td><td class="profile"></td><td class="profile_line">120</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;EXIT_FAILURE;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">121</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">122</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">123</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;(<span class="keyword">void</span>)printf(&nbsp;<span class="string">"\ntotal&nbsp;2info&nbsp;=&nbsp;%5.2f\tdf&nbsp;=&nbsp;%2d\tq&nbsp;=&nbsp;%7.4f\n"</span>,</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">124</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;totinfo,&nbsp;totdf,</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">125</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QChiSq(&nbsp;totinfo,&nbsp;totdf&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">126</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);</span></td></tr>
+<tr><td class="profile"> 514</td><td class="profile"></td><td class="profile_line">127</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;EXIT_SUCCESS;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">128</td><td><a title="Function main()
+TER 97 % ( 38/39) structural, 100 % (44/44) statement"><span class="lineplain">&nbsp;&nbsp;&nbsp;}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">129</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">130</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">131</td><td><span class="lineplain"><span class="comment">/*&nbsp;&nbsp;-*-&nbsp;Last-Edit:&nbsp;&nbsp;Tue&nbsp;Dec&nbsp;15&nbsp;14:48:14&nbsp;1992&nbsp;by&nbsp;Tarak&nbsp;S.&nbsp;Goradia;&nbsp;-*-&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">132</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">133</td><td><span class="lineplain"><span class="comment">/*</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">134</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">Gamma&nbsp;--&nbsp;gamma&nbsp;and&nbsp;related&nbsp;functions</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">135</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">136</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">last&nbsp;edit:&nbsp;&nbsp;&nbsp;88/09/09&nbsp;&nbsp;&nbsp;D&nbsp;A&nbsp;Gwyn</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">137</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">138</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">SCCS&nbsp;ID:&nbsp;&nbsp;&nbsp;@(#)gamma.c&nbsp;&nbsp;&nbsp;1.1&nbsp;(edited&nbsp;for&nbsp;publication)</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">139</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">140</td><td><span class="lineplain"><span class="comment">Acknowledgement:</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">141</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">Code&nbsp;based&nbsp;on&nbsp;that&nbsp;found&nbsp;in&nbsp;"Numerical&nbsp;Methods&nbsp;in&nbsp;C".</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">142</td><td><span class="lineplain"><span class="comment">*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">143</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">144</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;&lt;math.h&gt;</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">145</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;stdio.h&gt;</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">146</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">147</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;"std.h"</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">148</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">149</td><td><span class="lineplain"><span class="keyword">double</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a2"></a> 2172</td><td class="profile"></td><td class="profile_line">150</td><td><span class="linehit">LGamma(&nbsp;x&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">151</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;&nbsp;x;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">152</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">153</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">static</span>&nbsp;<span class="keyword">const</span>&nbsp;<span class="keyword">double</span>&nbsp;cof[6]&nbsp;=</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">154</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">155</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;76.18009173,&nbsp;&nbsp;&nbsp;-86.50532033,&nbsp;&nbsp;&nbsp;24.01409822,</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">156</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1.231739516,&nbsp;&nbsp;&nbsp;0.120858003e-2,&nbsp;&nbsp;&nbsp;-0.536382e-5</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">157</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">158</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;&nbsp;tmp,&nbsp;ser;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">159</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;&nbsp;j;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">160</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">161</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 171</td><td class="profile"> 2001</td><td class="profile_line">162</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;--x&nbsp;&lt;&nbsp;0.0&nbsp;)&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;use&nbsp;reflection&nbsp;formula&nbsp;for&nbsp;accuracy&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">163</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">164</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;pix&nbsp;=&nbsp;PI&nbsp;*&nbsp;x;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">165</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 171</td><td class="profile"></td><td class="profile_line">166</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;log(&nbsp;pix&nbsp;/&nbsp;sin(&nbsp;pix&nbsp;)&nbsp;)&nbsp;-&nbsp;LGamma(&nbsp;1.0&nbsp;-&nbsp;x&nbsp;);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">167</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">168</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">169</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;tmp&nbsp;=&nbsp;x&nbsp;+&nbsp;5.5;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">170</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;tmp&nbsp;-=&nbsp;(x&nbsp;+&nbsp;0.5)&nbsp;*&nbsp;log(&nbsp;tmp&nbsp;);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">171</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">172</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;ser&nbsp;=&nbsp;1.0;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">173</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 12006</td><td class="profile"> 2001</td><td class="profile_line">174</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;6;&nbsp;++j&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">175</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ser&nbsp;+=&nbsp;cof[j]&nbsp;/&nbsp;++x;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">176</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 2001</td><td class="profile"></td><td class="profile_line">177</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;-tmp&nbsp;+&nbsp;log(&nbsp;2.50662827465&nbsp;*&nbsp;ser&nbsp;);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">178</td><td><a title="Function LGamma()
+TER 100 % ( 7/7) structural, 100 % (14/14) statement"><span class="lineplain">&nbsp;&nbsp;&nbsp;}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">179</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">180</td><td><span class="lineplain"><span class="preproc">#define&nbsp;&nbsp;&nbsp;ITMAX&nbsp;&nbsp;&nbsp;100</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">181</td><td><span class="lineplain"><span class="preproc">#define&nbsp;&nbsp;&nbsp;EPS&nbsp;&nbsp;&nbsp;3.0e-7</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">182</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">183</td><td><span class="lineplain"><span class="keyword">static</span>&nbsp;<span class="keyword">double</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a3"></a> 819</td><td class="profile"></td><td class="profile_line">184</td><td><span class="linehit">gser(&nbsp;a,&nbsp;x&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">185</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;a,&nbsp;x;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">186</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">187</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;ap,&nbsp;del,&nbsp;sum;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">188</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;n;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">189</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">190</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 316</td><td class="profile"> 503</td><td class="profile_line">191</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;x&nbsp;&lt;=&nbsp;0.0&nbsp;)</span></td></tr>
+<tr><td class="profile"> 316</td><td class="profile"></td><td class="profile_line">192</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;0.0;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">193</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">194</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;del&nbsp;=&nbsp;sum&nbsp;=&nbsp;1.0&nbsp;/&nbsp;(ap&nbsp;=&nbsp;a);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">195</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 3789</td><td class="fcolnhit"> 0</td><td class="profile_line"><a href="indexD1.html#ut3" id="ut2">196</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;n&nbsp;=&nbsp;1;&nbsp;n&nbsp;&lt;=&nbsp;ITMAX;&nbsp;++n&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">197</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">198</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum&nbsp;+=&nbsp;del&nbsp;*=&nbsp;x&nbsp;/&nbsp;++ap;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">199</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 503</td><td class="profile"> 3286</td><td class="profile_line">200</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;Abs(&nbsp;del&nbsp;)&nbsp;&lt;&nbsp;Abs(&nbsp;sum&nbsp;)&nbsp;*&nbsp;EPS&nbsp;)</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 3789</td><td class="profile_line"><a href="indexD1.html#ut4" id="ut3">200</a></td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;ternary-?: ( del ) &lt; 0</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 3789</td><td class="profile_line"><a href="indexD1.html#ut5" id="ut4">200</a></td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;ternary-?: ( sum ) &lt; 0</span></td></tr>
+<tr><td class="profile"> 503</td><td class="profile"></td><td class="profile_line">201</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;sum&nbsp;*&nbsp;exp(&nbsp;-x&nbsp;+&nbsp;a&nbsp;*&nbsp;log(&nbsp;x&nbsp;)&nbsp;-&nbsp;LGamma(&nbsp;a&nbsp;)&nbsp;);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">202</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">203</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">204</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">/*NOTREACHED*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">205</td><td><a title="Function gser()
+TER 76 % ( 10/13) structural, 100 % (11/11) statement"><span class="lineplain">&nbsp;&nbsp;&nbsp;}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">206</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">207</td><td><span class="lineplain"><span class="keyword">static</span>&nbsp;<span class="keyword">double</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a4"></a> 1498</td><td class="profile"></td><td class="profile_line">208</td><td><span class="linehit">gcf(&nbsp;a,&nbsp;x&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">209</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;a,&nbsp;x;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">210</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">211</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;n;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">212</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;gold&nbsp;=&nbsp;0.0,&nbsp;fac&nbsp;=&nbsp;1.0,&nbsp;b1&nbsp;=&nbsp;1.0,</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">213</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b0&nbsp;=&nbsp;0.0,&nbsp;a0&nbsp;=&nbsp;1.0,&nbsp;a1&nbsp;=&nbsp;x;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">214</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 2996</td><td class="fcolnhit"> 0</td><td class="profile_line"><a href="indexD1.html#ut6" id="ut5">215</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;n&nbsp;=&nbsp;0;&nbsp;n&nbsp;&lt;=&nbsp;ITMAX;&nbsp;++n&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">216</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">217</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;anf;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">218</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;an&nbsp;=&nbsp;(<span class="keyword">double</span>)n;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">219</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;ana&nbsp;=&nbsp;an&nbsp;-&nbsp;a;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">220</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">221</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a0&nbsp;=&nbsp;(a1&nbsp;+&nbsp;a0&nbsp;*&nbsp;ana)&nbsp;*&nbsp;fac;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">222</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b0&nbsp;=&nbsp;(b1&nbsp;+&nbsp;b0&nbsp;*&nbsp;ana)&nbsp;*&nbsp;fac;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">223</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;anf&nbsp;=&nbsp;an&nbsp;*&nbsp;fac;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">224</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b1&nbsp;=&nbsp;x&nbsp;*&nbsp;b0&nbsp;+&nbsp;anf&nbsp;*&nbsp;b1;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">225</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a1&nbsp;=&nbsp;x&nbsp;*&nbsp;a0&nbsp;+&nbsp;anf&nbsp;*&nbsp;a1;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">226</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 2996</td><td class="fcolnhit"> 0</td><td class="profile_line"><a href="indexD1.html#ut7" id="ut6">227</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;a1&nbsp;!=&nbsp;0.0&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">228</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;renormalize&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">229</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;g&nbsp;=&nbsp;b1&nbsp;*&nbsp;(fac&nbsp;=&nbsp;1.0&nbsp;/&nbsp;a1);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">230</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">231</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gold&nbsp;=&nbsp;g&nbsp;-&nbsp;gold;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">232</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 1498</td><td class="profile"> 1498</td><td class="profile_line">233</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;Abs(&nbsp;gold&nbsp;)&nbsp;&lt;&nbsp;EPS&nbsp;*&nbsp;Abs(&nbsp;g&nbsp;)&nbsp;)</span></td></tr>
+<tr><td class="profile"> 366</td><td class="profile"> 2630</td><td class="profile_line">233</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ternary-?: ( gold ) &lt; 0</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 2996</td><td class="profile_line"><a href="indexD1.html#ut8" id="ut7">233</a></td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ternary-?: ( g ) &lt; 0</span></td></tr>
+<tr><td class="profile"> 1498</td><td class="profile"></td><td class="profile_line">234</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;exp(&nbsp;-x&nbsp;+&nbsp;a&nbsp;*&nbsp;log(&nbsp;x&nbsp;)&nbsp;-&nbsp;LGamma(&nbsp;a&nbsp;)&nbsp;)&nbsp;*&nbsp;g;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">235</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">236</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gold&nbsp;=&nbsp;g;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">237</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">238</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">239</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">240</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">/*NOTREACHED*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">241</td><td><a title="Function gcf()
+TER 75 % ( 9/12) structural, 100 % (19/19) statement"><span class="lineplain">&nbsp;&nbsp;&nbsp;}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">242</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">243</td><td><span class="lineplain"><span class="keyword">double</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a5"></a> 2317</td><td class="profile"></td><td class="profile_line">244</td><td><span class="linehit">QGamma(&nbsp;a,&nbsp;x&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">245</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;a,&nbsp;x;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">246</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">247</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 819</td><td class="profile"> 1498</td><td class="profile_line">248</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;x&nbsp;&lt;&nbsp;a&nbsp;+&nbsp;1.0&nbsp;?&nbsp;1.0&nbsp;-&nbsp;gser(&nbsp;a,&nbsp;x&nbsp;)&nbsp;:&nbsp;gcf(&nbsp;a,&nbsp;x&nbsp;);</span></td></tr>
+<tr><td class="profile"> 2317</td><td class="profile"></td><td class="profile_line">248</td><td><span class="profile_descr">&nbsp;&nbsp;return x &lt; a + 1.0 ? 1.0 - gser ( a , x ) : gcf ( a , x )</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">249</td><td><a title="Function QGamma()
+TER 100 % ( 4/4) structural, 100 % (1/1) statement"><span class="lineplain">&nbsp;&nbsp;&nbsp;}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">250</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">251</td><td><span class="lineplain"><span class="keyword">double</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a6"></a> 2317</td><td class="profile"></td><td class="profile_line">252</td><td><span class="linehit">QChiSq(&nbsp;chisq,&nbsp;df&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">253</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;chisq;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">254</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;df;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">255</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile"> 2317</td><td class="profile"></td><td class="profile_line">256</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;QGamma(&nbsp;(<span class="keyword">double</span>)df&nbsp;/&nbsp;2.0,&nbsp;chisq&nbsp;/&nbsp;2.0&nbsp;);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">257</td><td><a title="Function QChiSq()
+TER 100 % ( 2/2) structural, 100 % (1/1) statement"><span class="lineplain">&nbsp;&nbsp;&nbsp;}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">258</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">259</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">260</td><td><span class="lineplain"><span class="comment">/*</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">261</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">InfoTbl&nbsp;--&nbsp;Kullback's&nbsp;information&nbsp;measure&nbsp;for&nbsp;a&nbsp;2-way&nbsp;contingency&nbsp;table</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">262</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">263</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">last&nbsp;edit:&nbsp;&nbsp;&nbsp;88/09/19&nbsp;&nbsp;&nbsp;D&nbsp;A&nbsp;Gwyn</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">264</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">265</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">SCCS&nbsp;ID:&nbsp;&nbsp;&nbsp;@(#)info.c&nbsp;&nbsp;&nbsp;1.1&nbsp;(edited&nbsp;for&nbsp;publication)</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">266</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">267</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">Special&nbsp;return&nbsp;values:</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">268</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">-1.0&nbsp;&nbsp;&nbsp;entire&nbsp;table&nbsp;consisted&nbsp;of&nbsp;0&nbsp;entries</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">269</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">-2.0&nbsp;&nbsp;&nbsp;invalid&nbsp;table&nbsp;entry&nbsp;(frequency&nbsp;less&nbsp;than&nbsp;0)</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">270</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">-3.0&nbsp;&nbsp;&nbsp;invalid&nbsp;table&nbsp;dimensions&nbsp;(r&nbsp;or&nbsp;c&nbsp;less&nbsp;than&nbsp;2)</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">271</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">-4.0&nbsp;&nbsp;&nbsp;unable&nbsp;to&nbsp;allocate&nbsp;enough&nbsp;working&nbsp;storage</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">272</td><td><span class="lineplain"><span class="comment">*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">273</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">274</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;&lt;math.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/*&nbsp;for&nbsp;log()&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">275</td><td><span class="lineplain"><span class="preproc">#if&nbsp;__STDC__</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">276</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;&lt;stdlib.h&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/*&nbsp;malloc,&nbsp;free&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">277</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">278</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;"std.h"</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">279</td><td><span class="lineplain"><span class="preproc">#else</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">280</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&nbsp;&nbsp;"std.h"</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">281</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">282</td><td><span class="lineplain"><span class="keyword">extern</span>&nbsp;pointer&nbsp;&nbsp;&nbsp;malloc();</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">283</td><td><span class="lineplain"><span class="keyword">extern</span>&nbsp;<span class="keyword">void</span>&nbsp;free();</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">284</td><td><span class="lineplain"><span class="preproc">#endif</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">285</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">286</td><td><span class="lineplain"><span class="preproc">#ifndef&nbsp;NULL</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">287</td><td><span class="lineplain"><span class="preproc">#define&nbsp;NULL&nbsp;0</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">288</td><td><span class="lineplain"><span class="preproc">#endif</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">289</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">290</td><td><span class="lineplain"><span class="preproc">#define&nbsp;&nbsp;&nbsp;x(i,j)&nbsp;&nbsp;&nbsp;f[(i)*c+(j)]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/*&nbsp;convenient&nbsp;way&nbsp;to&nbsp;access&nbsp;freqs&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">291</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">292</td><td><span class="lineplain"><span class="keyword">double</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a7"></a> 2781</td><td class="profile"></td><td class="profile_line">293</td><td><span class="linehit">InfoTbl(&nbsp;r,&nbsp;c,&nbsp;f,&nbsp;pdf&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">294</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;&nbsp;r;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;#&nbsp;rows&nbsp;in&nbsp;table&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">295</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;&nbsp;c;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;#&nbsp;columns&nbsp;in&nbsp;table&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">296</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">const</span>&nbsp;<span class="keyword">long</span>&nbsp;*f;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;-&gt;&nbsp;r*c&nbsp;frequency&nbsp;tallies&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">297</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;&nbsp;*pdf;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;-&gt;&nbsp;return&nbsp;#&nbsp;d.f.&nbsp;for&nbsp;chi-square&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">298</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">299</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;i;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;row&nbsp;index&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">300</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;j;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;column&nbsp;index&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">301</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;N;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;(double)n&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">302</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;info;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;accumulates&nbsp;information&nbsp;measure&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">303</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;*xi;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;row&nbsp;sums&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">304</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;&nbsp;*xj;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;col&nbsp;sums&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">305</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;&nbsp;rdf&nbsp;=&nbsp;r&nbsp;-&nbsp;1;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;row&nbsp;degrees&nbsp;of&nbsp;freedom&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">306</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;&nbsp;cdf&nbsp;=&nbsp;c&nbsp;-&nbsp;1;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;column&nbsp;degrees&nbsp;of&nbsp;freedom&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">307</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 357</td><td class="profile"> 2424</td><td class="profile_line">308</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;rdf&nbsp;&lt;=&nbsp;0&nbsp;||&nbsp;cdf&nbsp;&lt;=&nbsp;0&nbsp;)</span></td></tr>
+<tr><td class="profile"> 269</td><td class="profile"></td><td class="profile_line">308</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;1: T || _</span></td></tr>
+<tr><td class="profile"> 88</td><td class="profile"></td><td class="profile_line">308</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;2: F || T</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 2424</td><td class="profile_line">308</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;3: F || F</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">309</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">310</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;=&nbsp;-3.0;</span></td></tr>
+<tr><td class="profile"> 357</td><td class="profile"></td><td class="profile_line">311</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">goto</span>&nbsp;ret3;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">312</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">313</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">314</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;*pdf&nbsp;=&nbsp;rdf&nbsp;*&nbsp;cdf;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;total&nbsp;degrees&nbsp;of&nbsp;freedom&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">315</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 2424</td><td class="profile_line"><a href="indexD1.html#ut9" id="ut8">316</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;(xi&nbsp;=&nbsp;(<span class="keyword">double</span>&nbsp;*)malloc(&nbsp;r&nbsp;*&nbsp;<span class="keyword">sizeof</span>(<span class="keyword">double</span>)&nbsp;))&nbsp;==&nbsp;NULL&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">317</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">318</td><td><span class="linenhit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;=&nbsp;-4.0;</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"></td><td class="profile_line"><a href="indexD1.html#ut10" id="ut9">319</a></td><td><span class="linenhit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">goto</span>&nbsp;ret3;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">320</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">321</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 2424</td><td class="profile_line"><a href="indexD1.html#ut11" id="ut10">322</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;(xj&nbsp;=&nbsp;(<span class="keyword">double</span>&nbsp;*)malloc(&nbsp;c&nbsp;*&nbsp;<span class="keyword">sizeof</span>(<span class="keyword">double</span>)&nbsp;))&nbsp;==&nbsp;NULL&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">323</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">324</td><td><span class="linenhit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;=&nbsp;-4.0;</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"></td><td class="profile_line"><a href="indexD1.html#ut12" id="ut11">325</a></td><td><span class="linenhit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">goto</span>&nbsp;ret2;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">326</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">327</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">328</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;compute&nbsp;row&nbsp;sums&nbsp;and&nbsp;total&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">329</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">330</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;N&nbsp;=&nbsp;0.0;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">331</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 17744</td><td class="profile"> 2245</td><td class="profile_line">332</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;r;&nbsp;++i&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">333</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">334</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;sum&nbsp;=&nbsp;0.0;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;accumulator&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">335</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 197175</td><td class="profile"> 17565</td><td class="profile_line">336</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;c;&nbsp;++j&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">337</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">338</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">long</span>&nbsp;k&nbsp;=&nbsp;x(i,j);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">339</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 179</td><td class="profile"> 196996</td><td class="profile_line">340</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;k&nbsp;&lt;&nbsp;0L&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">341</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">342</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;=&nbsp;-2.0;</span></td></tr>
+<tr><td class="profile"> 179</td><td class="profile"></td><td class="profile_line">343</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">goto</span>&nbsp;ret1;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">344</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">345</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">346</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum&nbsp;+=&nbsp;(<span class="keyword">double</span>)k;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">347</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">348</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">349</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;+=&nbsp;xi[i]&nbsp;=&nbsp;sum;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">350</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">351</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 244</td><td class="profile"> 2001</td><td class="profile_line">352</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;N&nbsp;&lt;=&nbsp;0.0&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">353</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">354</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;=&nbsp;-1.0;</span></td></tr>
+<tr><td class="profile"> 244</td><td class="profile"></td><td class="profile_line">355</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">goto</span>&nbsp;ret1;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">356</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">357</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">358</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;compute&nbsp;column&nbsp;sums&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">359</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 15809</td><td class="profile"> 2001</td><td class="profile_line">360</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;c;&nbsp;++j&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">361</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">362</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;sum&nbsp;=&nbsp;0.0;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;accumulator&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">363</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 191490</td><td class="profile"> 15809</td><td class="profile_line">364</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;r;&nbsp;++i&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">365</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum&nbsp;+=&nbsp;(<span class="keyword">double</span>)x(i,j);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">366</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">367</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xj[j]&nbsp;=&nbsp;sum;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">368</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">369</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">370</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;compute&nbsp;information&nbsp;measure&nbsp;(four&nbsp;parts)&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">371</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">372</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;info&nbsp;=&nbsp;N&nbsp;*&nbsp;log(&nbsp;N&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;part&nbsp;1&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">373</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 16724</td><td class="profile"> 2001</td><td class="profile_line">374</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;r;&nbsp;++i&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">375</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">376</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;pi&nbsp;=&nbsp;xi[i];&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;row&nbsp;sum&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">377</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 16102</td><td class="profile"> 622</td><td class="profile_line">378</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;pi&nbsp;&gt;&nbsp;0.0&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">379</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;-=&nbsp;pi&nbsp;*&nbsp;log(&nbsp;pi&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;part&nbsp;2&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">380</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 191490</td><td class="profile"> 16724</td><td class="profile_line">381</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;c;&nbsp;++j&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">382</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">383</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;pij&nbsp;=&nbsp;(<span class="keyword">double</span>)x(i,j);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">384</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 185581</td><td class="profile"> 5909</td><td class="profile_line">385</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;pij&nbsp;&gt;&nbsp;0.0&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">386</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;+=&nbsp;pij&nbsp;*&nbsp;log(&nbsp;pij&nbsp;);&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;part&nbsp;3&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">387</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">388</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">389</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 15809</td><td class="profile"> 2001</td><td class="profile_line">390</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>&nbsp;(&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;c;&nbsp;++j&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">391</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">392</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">double</span>&nbsp;pj&nbsp;=&nbsp;xj[j];&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;column&nbsp;sum&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">393</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile"> 15308</td><td class="profile"> 501</td><td class="profile_line">394</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;(&nbsp;pj&nbsp;&gt;&nbsp;0.0&nbsp;)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">395</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;-=&nbsp;pj&nbsp;*&nbsp;log(&nbsp;pj&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;part&nbsp;4&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">396</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">397</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">398</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;info&nbsp;*=&nbsp;2.0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;for&nbsp;comparability&nbsp;with&nbsp;chi-square&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">399</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">400</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;ret1:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">401</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;free(&nbsp;(pointer)xj&nbsp;);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">402</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;ret2:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">403</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;free(&nbsp;(pointer)xi&nbsp;);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">404</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;ret3:</span></td></tr>
+<tr><td class="profile"> 2781</td><td class="profile"></td><td class="profile_line">405</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>&nbsp;info;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">406</td><td><a title="Function InfoTbl()
+TER 90 % ( 36/40) structural, 94 % (63/67) statement"><span class="lineplain">&nbsp;&nbsp;&nbsp;}</span></a></td></tr>
+</tbody>
+</table>
+<a id="ut12"></a>
+<span class="belowb">***TER</span><span class="belowb">90 % (106/117) of FILE tot_info.c</span><br>
+<span class="terindent"></span><span class="belowb">97 % (153/157) statement</span><br><br>
+<span class="pages"><a href="indexF.html" target="_top">Directory Summary</a> | <a href="index.html" target="_top">Files Summary</a> | <a href="indexB1.html" target="_top">Functions Summary</a> | <a href="indexU.html" target="_top">Untested Code</a> | <a href="indexD1.html">Execution Profile</a><br>
+To files: <a href="indexD1.html">First</a> | Previous | Next | <a href="indexD1.html">Last</a> | <a href="indexD1.html">Top</a> | <a href="indexA.html#a1">Index</a> | <a href="indexD1.html" target="_top">No Index</a></span><br><br>
+</body>
+</html>

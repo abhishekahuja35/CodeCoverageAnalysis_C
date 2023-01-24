@@ -1,0 +1,58 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Nov  7 22:30:05 2022)
+Data file(s) used     : MON.dat (Mon Nov  7 22:30:31 2022)
+Listing produced at   : Mon Nov  7 22:30:49 2022
+Coverage view         : Reduced to function coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/printtokens2/versions.alt/versions.orig/v10/print_tokens2.c
+INSTRUMENTATION MODE  : function
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+      4115                 21 FUNCTION main()
+      4085                 59 FUNCTION open_character_stream()
+    158391                 77 FUNCTION get_char()
+      3405                 90 FUNCTION unget_char()
+      4085                127 FUNCTION open_token_stream()
+     23151                145 FUNCTION get_token()
+    103476                203 FUNCTION is_token_end()
+     23151                237 FUNCTION token_type()
+     23151                257 FUNCTION print_token()
+    172003                292 FUNCTION is_eof_token()
+      9855                306 FUNCTION is_comment()
+     23151                320 FUNCTION is_keyword()
+     10408                335 FUNCTION is_char_constant()
+     13224                349 FUNCTION is_num_constant()
+     11971                374 FUNCTION is_str_constant()
+     16010                396 FUNCTION is_identifier()
+       759                421 FUNCTION unget_error()
+      4804                433 FUNCTION print_spec_symbol()
+    115442                476 FUNCTION is_spec_symbol()
+
+***TER 100 % ( 19/ 19) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/printtokens2/versions.alt/versions.orig/v10/print_tokens2.c
+       100 % (  0/  0) statement (N.A. for 19 functions)
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 19
+Source lines       : 508
+TER                : 100 % (19/19) function
+TER                : 100 % (0/0) statement (N.A. for 19 functions)

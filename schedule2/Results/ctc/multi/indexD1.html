@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>CTC++ Coverage Report - Execution Profile - schedule2.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keyword" content="CTC++, Testwell, Test Coverage Analyzer">
+<meta name="date" content="Mon Nov 7 20:29:39 2022">
+<meta name="generator" content="Testwell CTC++ add-on utility ctc2html v9.1.4.1">
+<link href="index.html" rel="contents">
+<link href="ctc.css" rel="stylesheet" type="text/css">
+<script src="ctc.js" type="text/javascript"></script>
+<script src="sorttable.js" type="text/javascript"></script>
+<script src="own_javascript.js" type="text/javascript"></script>
+</head>
+<body>
+<span class="reportb">CTC++ Coverage Report</span><span class="report">- Execution Profile</span><span class="info">#1/1</span><br><br>
+<span class="pages"><a href="indexF.html" target="_top">Directory Summary</a> | <a href="index.html" target="_top">Files Summary</a> | <a href="indexB1.html" target="_top">Functions Summary</a> | <a href="indexU.html" target="_top">Untested Code</a> | <a href="indexD1.html">Execution Profile</a><br>
+To files: <a href="indexD1.html">First</a> | Previous | Next | <a href="indexD1.html">Last</a> | <a href="indexA.html#a1">Index</a> | <a href="indexD1.html" target="_top">No Index</a></span><br><br>
+<span class="infob">Source file:</span><span class="infob">/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c</span><br>
+<span class="infob">Instrumentation mode:</span><span class="info">multicondition</span><br>
+<span class="infob">TER:</span><span class="below">92 % (136/147) structural,</span><span class="below">96 % (151/157) statement</span><br><br>
+<table class="execution">
+<thead>
+<tr><th>Hits/True</th><th>False</th><th><a href="indexD1.html#ut1" title="First untested">Line</a></th><th>Source</th></tr>
+</thead>
+<tbody>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">1</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">2</td><td><span class="lineplain"><span class="comment">/*&nbsp;$Log:&nbsp;schedule.c,v&nbsp;$</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">3</td><td><span class="lineplain">&nbsp;<span class="comment">*&nbsp;Revision&nbsp;1.4&nbsp;&nbsp;1993/05/04&nbsp;&nbsp;12:23:58&nbsp;&nbsp;foster</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">4</td><td><span class="lineplain">&nbsp;<span class="comment">*&nbsp;Debug&nbsp;stuff&nbsp;removed</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">5</td><td><span class="lineplain">&nbsp;<span class="comment">*</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">6</td><td><span class="lineplain">&nbsp;<span class="comment">*&nbsp;Revision&nbsp;1.3&nbsp;&nbsp;1993/05/03&nbsp;&nbsp;20:27:04&nbsp;&nbsp;foster</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">7</td><td><span class="lineplain">&nbsp;<span class="comment">*&nbsp;Full&nbsp;Functionality</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">8</td><td><span class="lineplain">&nbsp;<span class="comment">*</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">9</td><td><span class="lineplain">&nbsp;<span class="comment">*&nbsp;Revision&nbsp;1.2&nbsp;&nbsp;1993/05/03&nbsp;&nbsp;15:41:01&nbsp;&nbsp;foster</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">10</td><td><span class="lineplain">&nbsp;<span class="comment">*&nbsp;Restructure&nbsp;functions</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">11</td><td><span class="lineplain">&nbsp;<span class="comment">*</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">12</td><td><span class="lineplain">&nbsp;<span class="comment">*&nbsp;Revision&nbsp;1.1&nbsp;&nbsp;1993/05/01&nbsp;&nbsp;11:38:04&nbsp;&nbsp;foster</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">13</td><td><span class="lineplain">&nbsp;<span class="comment">*&nbsp;Initial&nbsp;revision</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">14</td><td><span class="lineplain">&nbsp;<span class="comment">*&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">15</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">16</td><td><span class="lineplain"><span class="preproc">#include&nbsp;&lt;stdio.h&gt;</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">17</td><td><span class="lineplain"><span class="preproc">#include&nbsp;"schedule2.h"</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">18</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">19</td><td><span class="lineplain"><span class="keyword">static</span>&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*&nbsp;current_job;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">20</td><td><span class="lineplain"><span class="keyword">static</span>&nbsp;<span class="keyword">int</span>&nbsp;next_pid&nbsp;=&nbsp;0;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">21</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">22</td><td><span class="lineplain"><span class="keyword">int</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a1"></a> 62145</td><td class="profile"></td><td class="profile_line">23</td><td><span class="linehit">enqueue(prio,&nbsp;new_process)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">24</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;prio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">25</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*new_process;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">26</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">27</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;status;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">28</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;put_end(prio,&nbsp;new_process);&nbsp;<span class="comment">/*&nbsp;removed&nbsp;status&nbsp;code&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 62145</td><td class="profile"></td><td class="profile_line">29</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(reschedule(prio));</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">30</td><td><a title="Function enqueue()
+TER 100 % ( 2/2) structural, 100 % (3/3) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">31</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">32</td><td><span class="lineplain"><span class="keyword">struct</span>&nbsp;queue</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">33</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">34</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;length;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">35</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*head;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">36</td><td><span class="lineplain">};</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">37</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">38</td><td><span class="lineplain"><span class="keyword">static</span>&nbsp;<span class="keyword">struct</span>&nbsp;queue&nbsp;prio_queue[MAXPRIO&nbsp;+&nbsp;1];&nbsp;<span class="comment">/*&nbsp;blocked&nbsp;queue&nbsp;is&nbsp;[0]&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">39</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">40</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">41</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a2"></a> 2710</td><td class="profile"></td><td class="profile_line">42</td><td><span class="linehit">main(argc,&nbsp;argv)&nbsp;<span class="comment">/*&nbsp;n3,&nbsp;n2,&nbsp;n1&nbsp;:&nbsp;#&nbsp;of&nbsp;processes&nbsp;at&nbsp;prio3&nbsp;...&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">43</td><td><span class="linehit"><span class="keyword">int</span>&nbsp;argc;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">44</td><td><span class="linehit"><span class="keyword">char</span>&nbsp;*argv[];</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">45</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">46</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;command,&nbsp;prio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">47</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span>&nbsp;ratio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">48</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;nprocs,&nbsp;status,&nbsp;pid;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">49</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*process;</span></td></tr>
+<tr><td class="profile"> 31</td><td class="profile"> 2679</td><td class="profile_line">50</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(argc&nbsp;!=&nbsp;MAXPRIO&nbsp;+&nbsp;1)&nbsp;exit_here(BADNOARGS);</span></td></tr>
+<tr><td class="profile"> 8007</td><td class="profile"> 2649</td><td class="profile_line">51</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(prio&nbsp;=&nbsp;MAXPRIO;&nbsp;prio&nbsp;&gt;&nbsp;0;&nbsp;prio--)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">52</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile"> 30</td><td class="profile"> 7977</td><td class="profile_line">53</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>((nprocs&nbsp;=&nbsp;atoi(argv[MAXPRIO&nbsp;+&nbsp;1&nbsp;-&nbsp;prio]))&nbsp;&lt;&nbsp;0)&nbsp;exit_here(BADARG);</span></td></tr>
+<tr><td class="profile"> 27758</td><td class="profile"> 7977</td><td class="profile_line">54</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(;&nbsp;nprocs&nbsp;&gt;&nbsp;0;&nbsp;nprocs--)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">55</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 27758</td><td class="profile_line"><a href="indexD1.html#ut2" id="ut1">56</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(status&nbsp;=&nbsp;new_job(prio))&nbsp;exit_here(status);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">57</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">58</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">59</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;while&nbsp;there&nbsp;are&nbsp;commands,&nbsp;schedule&nbsp;it&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 87794</td><td class="profile"> 2649</td><td class="profile_line">60</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>((status&nbsp;=&nbsp;get_command(&amp;command,&nbsp;&amp;prio,&nbsp;&amp;ratio))&nbsp;&gt;&nbsp;0)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">61</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">62</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;schedule(command,&nbsp;prio,&nbsp;ratio);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">63</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 2649</td><td class="profile_line"><a href="indexD1.html#ut3" id="ut2">64</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(status&nbsp;&lt;&nbsp;0)&nbsp;exit_here(status);&nbsp;<span class="comment">/*&nbsp;Real&nbsp;bad&nbsp;error&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">65</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;exit_here(OK);</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"></td><td class="profile_line"><a href="indexD1.html#ut4" id="ut3">66</a></td><td><a title="Function main()
+TER 81 % ( 13/16) structural, 90 % (19/21) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">67</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">68</td><td><span class="lineplain"><span class="keyword">int</span>&nbsp;</span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a3"></a> 90443</td><td class="profile"></td><td class="profile_line">69</td><td><span class="linehit">get_command(command,&nbsp;prio,&nbsp;ratio)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">70</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;*command,&nbsp;*prio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">71</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span>&nbsp;*ratio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">72</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">73</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;status&nbsp;=&nbsp;OK;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">74</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">char</span>&nbsp;buf[CMDSIZE];</span></td></tr>
+<tr><td class="profile"> 87794</td><td class="profile"> 2649</td><td class="profile_line">75</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(fgets(buf,&nbsp;CMDSIZE,&nbsp;stdin))</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">76</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">77</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;*prio&nbsp;=&nbsp;*command&nbsp;=&nbsp;-1;&nbsp;*ratio&nbsp;=-1.0;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">78</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;sscanf(buf,&nbsp;<span class="string">"%d"</span>,&nbsp;command);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">79</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">switch</span>(*command)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">80</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile"> 13594</td><td class="profile"></td><td class="profile_line">81</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;NEW_JOB&nbsp;:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">82</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sscanf(buf,&nbsp;<span class="string">"%*s%d"</span>,&nbsp;prio);</span></td></tr>
+<tr><td class="profile"> 13594</td><td class="profile"></td><td class="profile_line">83</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 13134</td><td class="profile"></td><td class="profile_line">84</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;UNBLOCK&nbsp;:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">85</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sscanf(buf,&nbsp;<span class="string">"%*s%f"</span>,&nbsp;ratio);</span></td></tr>
+<tr><td class="profile"> 13134</td><td class="profile"></td><td class="profile_line">86</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 12314</td><td class="profile"></td><td class="profile_line">87</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;UPGRADE_PRIO&nbsp;:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">88</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sscanf(buf,&nbsp;<span class="string">"%*s%d%f"</span>,&nbsp;prio,&nbsp;ratio);</span></td></tr>
+<tr><td class="profile"> 12314</td><td class="profile"></td><td class="profile_line">89</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 48752</td><td class="profile"></td><td class="profile_line">90</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">91</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;Find&nbsp;end&nbsp;of&nbsp;&nbsp;line&nbsp;of&nbsp;input&nbsp;if&nbsp;no&nbsp;EOF&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 212</td><td class="profile"> 87794</td><td class="profile_line">92</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(buf[strlen(buf)-1]&nbsp;!=&nbsp;<span class="string">'\n'</span>&nbsp;&amp;&amp;&nbsp;fgets(buf,&nbsp;CMDSIZE,&nbsp;stdin));</span></td></tr>
+<tr><td class="profile"> 212</td><td class="profile"></td><td class="profile_line">92</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1: T &amp;&amp; T</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 9</td><td class="profile_line">92</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2: T &amp;&amp; F</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 87785</td><td class="profile_line">92</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3: F &amp;&amp; _</span></td></tr>
+<tr><td class="profile"> 87794</td><td class="profile"></td><td class="profile_line">93</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(TRUE);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">94</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">95</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;<span class="keyword">return</span>(FALSE);</span></td></tr>
+<tr><td class="profile"> 2649</td><td class="profile"></td><td class="profile_line">95</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;return ( 0 )</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">96</td><td><a title="Function get_command()
+TER 100 % ( 17/17) structural, 100 % (17/17) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">97</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a4"></a> 2710</td><td class="profile"></td><td class="profile_line">98</td><td><span class="linehit">exit_here(status)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">99</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;status;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">100</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">101</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;exit(abs(status));</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"></td><td class="profile_line"><a href="indexD1.html#ut5" id="ut4">102</a></td><td><a title="Function exit_here()
+TER 50 % ( 1/2) structural, 100 % (1/1) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">103</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">104</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">105</td><td><span class="lineplain"><span class="keyword">int</span>&nbsp;</span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a5"></a> 41352</td><td class="profile"></td><td class="profile_line">106</td><td><span class="linehit">new_job(prio)&nbsp;<span class="comment">/*&nbsp;allocate&nbsp;new&nbsp;pid&nbsp;and&nbsp;process&nbsp;block.&nbsp;Stick&nbsp;at&nbsp;end&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">107</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;prio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">108</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">109</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;pid,&nbsp;status&nbsp;=&nbsp;OK;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">110</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*new_process;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">111</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;pid&nbsp;=&nbsp;next_pid++;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">112</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;new_process&nbsp;=&nbsp;(<span class="keyword">struct</span>&nbsp;process&nbsp;*)&nbsp;malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span>&nbsp;process));</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 41352</td><td class="profile_line"><a href="indexD1.html#ut6" id="ut5">113</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(!new_process)&nbsp;status&nbsp;=&nbsp;MALLOC_ERR;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">114</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">115</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">116</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;new_process-&gt;pid&nbsp;=&nbsp;pid;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">117</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;new_process-&gt;priority&nbsp;=&nbsp;prio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">118</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;new_process-&gt;next&nbsp;=&nbsp;(<span class="keyword">struct</span>&nbsp;process&nbsp;*)&nbsp;0;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">119</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;enqueue(prio,&nbsp;new_process);</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 41352</td><td class="profile_line"><a href="indexD1.html#ut7" id="ut6">120</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(status)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">121</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">122</td><td><span class="linenhit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free(new_process);&nbsp;<span class="comment">/*&nbsp;Return&nbsp;process&nbsp;block&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">123</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">124</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 41352</td><td class="profile_line"><a href="indexD1.html#ut8" id="ut7">125</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(status)&nbsp;next_pid--;&nbsp;<span class="comment">/*&nbsp;Unsuccess.&nbsp;Restore&nbsp;pid&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 41352</td><td class="profile"></td><td class="profile_line">126</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(status);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">127</td><td><a title="Function new_job()
+TER 62 % ( 5/8) structural, 80 % (12/15) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">128</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a6"></a> 12314</td><td class="profile"></td><td class="profile_line">129</td><td><span class="linehit"><span class="keyword">int</span>&nbsp;upgrade_prio(prio,&nbsp;ratio)&nbsp;<span class="comment">/*&nbsp;increment&nbsp;priority&nbsp;at&nbsp;ratio&nbsp;in&nbsp;queue&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">130</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;prio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">131</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span>&nbsp;ratio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">132</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">133</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;status;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">134</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*&nbsp;job;</span></td></tr>
+<tr><td class="profile"> 1145</td><td class="profile"> 11169</td><td class="profile_line">135</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(prio&nbsp;&lt;&nbsp;1&nbsp;||&nbsp;prio&nbsp;&gt;&nbsp;MAXLOPRIO)&nbsp;<span class="keyword">return</span>(BADPRIO);</span></td></tr>
+<tr><td class="profile"> 84</td><td class="profile"></td><td class="profile_line">135</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;1: T || _</span></td></tr>
+<tr><td class="profile"> 1061</td><td class="profile"></td><td class="profile_line">135</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;2: F || T</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 11169</td><td class="profile_line">135</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;3: F || F</span></td></tr>
+<tr><td class="profile"> 1145</td><td class="profile"></td><td class="profile_line">135</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;return ( - 4 )</span></td></tr>
+<tr><td class="profile"> 8577</td><td class="profile"> 2592</td><td class="profile_line">136</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>((status&nbsp;=&nbsp;get_process(prio,&nbsp;ratio,&nbsp;&amp;job))&nbsp;&lt;=&nbsp;0)&nbsp;<span class="keyword">return</span>(status);</span></td></tr>
+<tr><td class="profile"> 8577</td><td class="profile"></td><td class="profile_line">136</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;return ( status )</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">137</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;We&nbsp;found&nbsp;a&nbsp;job&nbsp;in&nbsp;that&nbsp;queue.&nbsp;Upgrade&nbsp;it&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">138</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;job-&gt;priority&nbsp;=&nbsp;prio&nbsp;+&nbsp;1;</span></td></tr>
+<tr><td class="profile"> 2592</td><td class="profile"></td><td class="profile_line">139</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(enqueue(prio&nbsp;+&nbsp;1,&nbsp;job));</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">140</td><td><a title="Function upgrade_prio()
+TER 100 % ( 11/11) structural, 100 % (8/8) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">141</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">142</td><td><span class="lineplain"><span class="keyword">int</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a7"></a> 12700</td><td class="profile"></td><td class="profile_line">143</td><td><span class="linehit">block()&nbsp;<span class="comment">/*&nbsp;Put&nbsp;current&nbsp;job&nbsp;in&nbsp;blocked&nbsp;queue&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">144</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">145</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*&nbsp;job;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">146</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;job&nbsp;=&nbsp;get_current();</span></td></tr>
+<tr><td class="profile"> 6633</td><td class="profile"> 6067</td><td class="profile_line">147</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(job)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">148</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">149</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;current_job&nbsp;=&nbsp;(<span class="keyword">struct</span>&nbsp;process&nbsp;*)0;&nbsp;<span class="comment">/*&nbsp;remove&nbsp;it&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 6633</td><td class="profile"></td><td class="profile_line">150</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(enqueue(BLOCKPRIO,&nbsp;job));&nbsp;<span class="comment">/*&nbsp;put&nbsp;into&nbsp;blocked&nbsp;queue&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">151</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile"> 6067</td><td class="profile"></td><td class="profile_line">152</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(OK);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">153</td><td><a title="Function block()
+TER 100 % ( 5/5) structural, 100 % (6/6) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">154</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">155</td><td><span class="lineplain"><span class="keyword">int</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a8"></a> 13134</td><td class="profile"></td><td class="profile_line">156</td><td><span class="linehit">unblock(ratio)&nbsp;<span class="comment">/*&nbsp;Restore&nbsp;job&nbsp;@&nbsp;ratio&nbsp;in&nbsp;blocked&nbsp;queue&nbsp;to&nbsp;its&nbsp;queue&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">157</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span>&nbsp;ratio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">158</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">159</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;status;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">160</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*&nbsp;job;</span></td></tr>
+<tr><td class="profile"> 8077</td><td class="profile"> 5057</td><td class="profile_line">161</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>((status&nbsp;=&nbsp;get_process(BLOCKPRIO,&nbsp;ratio,&nbsp;&amp;job))&nbsp;&lt;=&nbsp;0)&nbsp;<span class="keyword">return</span>(status);</span></td></tr>
+<tr><td class="profile"> 8077</td><td class="profile"></td><td class="profile_line">161</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;return ( status )</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">162</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;We&nbsp;found&nbsp;a&nbsp;blocked&nbsp;process.&nbsp;Put&nbsp;it&nbsp;where&nbsp;it&nbsp;belongs.&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 5057</td><td class="profile"></td><td class="profile_line">163</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(enqueue(job-&gt;priority,&nbsp;job));</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">164</td><td><a title="Function unblock()
+TER 100 % ( 5/5) structural, 100 % (5/5) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">165</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">166</td><td><span class="lineplain"><span class="keyword">int</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a9"></a> 12358</td><td class="profile"></td><td class="profile_line">167</td><td><span class="linehit">quantum_expire()&nbsp;<span class="comment">/*&nbsp;put&nbsp;current&nbsp;job&nbsp;at&nbsp;end&nbsp;of&nbsp;its&nbsp;queue&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">168</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">169</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*&nbsp;job;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">170</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;job&nbsp;=&nbsp;get_current();</span></td></tr>
+<tr><td class="profile"> 6511</td><td class="profile"> 5847</td><td class="profile_line">171</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(job)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">172</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">173</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;current_job&nbsp;=&nbsp;(<span class="keyword">struct</span>&nbsp;process&nbsp;*)0;&nbsp;<span class="comment">/*&nbsp;remove&nbsp;it&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 6511</td><td class="profile"></td><td class="profile_line">174</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(enqueue(job-&gt;priority,&nbsp;job));</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">175</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile"> 5847</td><td class="profile"></td><td class="profile_line">176</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(OK);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">177</td><td><a title="Function quantum_expire()
+TER 100 % ( 5/5) structural, 100 % (6/6) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">178</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">179</td><td><span class="lineplain"><span class="keyword">int</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a10"></a> 48538</td><td class="profile"></td><td class="profile_line">180</td><td><span class="linehit">finish()&nbsp;<span class="comment">/*&nbsp;Get&nbsp;current&nbsp;job,&nbsp;print&nbsp;it,&nbsp;and&nbsp;zap&nbsp;it.&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">181</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">182</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*&nbsp;job;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">183</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;job&nbsp;=&nbsp;get_current();</span></td></tr>
+<tr><td class="profile"> 32489</td><td class="profile"> 16049</td><td class="profile_line">184</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(job)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">185</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">186</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;current_job&nbsp;=&nbsp;(<span class="keyword">struct</span>&nbsp;process&nbsp;*)0;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">187</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;reschedule(0);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">188</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;fprintf(stdout,&nbsp;<span class="string">"&nbsp;%d"</span>,&nbsp;job-&gt;pid);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">189</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;free(job);</span></td></tr>
+<tr><td class="profile"> 32489</td><td class="profile"></td><td class="profile_line">190</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(FALSE);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">191</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">192</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;<span class="keyword">return</span>(TRUE);</span></td></tr>
+<tr><td class="profile"> 16049</td><td class="profile"></td><td class="profile_line">192</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;return ( 1 )</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">193</td><td><a title="Function finish()
+TER 100 % ( 5/5) structural, 100 % (9/9) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">194</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">195</td><td><span class="lineplain"><span class="keyword">int</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a11"></a> 11525</td><td class="profile"></td><td class="profile_line">196</td><td><span class="linehit">flush()&nbsp;<span class="comment">/*&nbsp;Get&nbsp;all&nbsp;jobs&nbsp;in&nbsp;priority&nbsp;queues&nbsp;&amp;&nbsp;zap&nbsp;them&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">197</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile"> 28218</td><td class="profile"> 11525</td><td class="profile_line">198</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span>(!finish());</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">199</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;fprintf(stdout,&nbsp;<span class="string">"\n"</span>);</span></td></tr>
+<tr><td class="profile"> 11525</td><td class="profile"></td><td class="profile_line">200</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(OK);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">201</td><td><a title="Function flush()
+TER 100 % ( 4/4) structural, 100 % (4/4) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">202</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">203</td><td><span class="lineplain"><span class="keyword">struct</span>&nbsp;process&nbsp;*&nbsp;</span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a12"></a> 168230</td><td class="profile"></td><td class="profile_line">204</td><td><span class="linehit">get_current()&nbsp;<span class="comment">/*&nbsp;If&nbsp;no&nbsp;current&nbsp;process,&nbsp;get&nbsp;it.&nbsp;Return&nbsp;it&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">205</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">206</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;prio;</span></td></tr>
+<tr><td class="profile"> 87481</td><td class="profile"> 80749</td><td class="profile_line">207</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(!current_job)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">208</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile"> 205744</td><td class="profile"> 38029</td><td class="profile_line">209</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(prio&nbsp;=&nbsp;MAXPRIO;&nbsp;prio&nbsp;&gt;&nbsp;0;&nbsp;prio--)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">210</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;{&nbsp;<span class="comment">/*&nbsp;find&nbsp;head&nbsp;of&nbsp;highest&nbsp;queue&nbsp;with&nbsp;a&nbsp;process&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 49452</td><td class="profile"> 156292</td><td class="profile_line">211</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(get_process(prio,&nbsp;0.0,&nbsp;&amp;current_job)&nbsp;&gt;&nbsp;0)&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 49452</td><td class="profile"></td><td class="profile_line">211</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">212</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">213</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile"> 168230</td><td class="profile"></td><td class="profile_line">214</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(current_job);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">215</td><td><a title="Function get_current()
+TER 100 % ( 9/9) structural, 100 % (8/8) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">216</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">217</td><td><span class="lineplain"><span class="keyword">int</span></span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a13"></a> 94634</td><td class="profile"></td><td class="profile_line">218</td><td><span class="linehit">reschedule(prio)&nbsp;<span class="comment">/*&nbsp;Put&nbsp;highest&nbsp;priority&nbsp;job&nbsp;into&nbsp;current_job&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">219</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;prio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">220</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile"> 2342</td><td class="profile"> 92292</td><td class="profile_line">221</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(current_job&nbsp;&amp;&amp;&nbsp;prio&nbsp;&gt;&nbsp;current_job-&gt;priority)</span></td></tr>
+<tr><td class="profile"> 2342</td><td class="profile"></td><td class="profile_line">221</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;1: T &amp;&amp; T</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 35116</td><td class="profile_line">221</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;2: T &amp;&amp; F</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 57176</td><td class="profile_line">221</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;3: F &amp;&amp; _</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">222</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">223</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;put_end(current_job-&gt;priority,&nbsp;current_job);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">224</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;current_job&nbsp;=&nbsp;(<span class="keyword">struct</span>&nbsp;process&nbsp;*)0;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">225</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">226</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;get_current();&nbsp;<span class="comment">/*&nbsp;Reschedule&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 94634</td><td class="profile"></td><td class="profile_line">227</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(OK);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">228</td><td><a title="Function reschedule()
+TER 100 % ( 7/7) structural, 100 % (5/5) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">229</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">230</td><td><span class="lineplain"><span class="keyword">int</span>&nbsp;</span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a14"></a> 87794</td><td class="profile"></td><td class="profile_line">231</td><td><span class="linehit">schedule(command,&nbsp;prio,&nbsp;ratio)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">232</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;command,&nbsp;prio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">233</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span>&nbsp;ratio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">234</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">235</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;status&nbsp;=&nbsp;OK;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">236</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">switch</span>(command)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">237</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile"> 13594</td><td class="profile"></td><td class="profile_line">238</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;NEW_JOB&nbsp;:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">239</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;new_job(prio);</span></td></tr>
+<tr><td class="profile"> 13594</td><td class="profile"></td><td class="profile_line">240</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 12358</td><td class="profile"></td><td class="profile_line">241</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;QUANTUM_EXPIRE&nbsp;:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">242</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;quantum_expire();</span></td></tr>
+<tr><td class="profile"> 12358</td><td class="profile"></td><td class="profile_line">243</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 12314</td><td class="profile"></td><td class="profile_line">244</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;UPGRADE_PRIO&nbsp;:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">245</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;upgrade_prio(prio,&nbsp;ratio);</span></td></tr>
+<tr><td class="profile"> 12314</td><td class="profile"></td><td class="profile_line">246</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 12700</td><td class="profile"></td><td class="profile_line">247</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;BLOCK&nbsp;:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">248</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;block();</span></td></tr>
+<tr><td class="profile"> 12700</td><td class="profile"></td><td class="profile_line">249</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 13134</td><td class="profile"></td><td class="profile_line">250</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;UNBLOCK&nbsp;:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">251</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;unblock(ratio);</span></td></tr>
+<tr><td class="profile"> 13134</td><td class="profile"></td><td class="profile_line">252</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 8795</td><td class="profile"></td><td class="profile_line">253</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;FINISH&nbsp;:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">254</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finish();</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">255</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;fprintf(stdout,&nbsp;<span class="string">"\n"</span>);</span></td></tr>
+<tr><td class="profile"> 8795</td><td class="profile"></td><td class="profile_line">256</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 11525</td><td class="profile"></td><td class="profile_line">257</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span>&nbsp;FLUSH&nbsp;:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">258</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;flush();</span></td></tr>
+<tr><td class="profile"> 11525</td><td class="profile"></td><td class="profile_line">259</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">break</span>;</span></td></tr>
+<tr><td class="profile"> 3374</td><td class="profile"></td><td class="profile_line">260</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">default</span>:</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">261</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;NO_COMMAND;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">262</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile"> 87794</td><td class="profile"></td><td class="profile_line">263</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(status);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">264</td><td><a title="Function schedule()
+TER 100 % ( 17/17) structural, 100 % (19/19) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">265</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">266</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">267</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">268</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">269</td><td><span class="lineplain"><span class="keyword">int</span>&nbsp;</span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a15"></a> 64487</td><td class="profile"></td><td class="profile_line">270</td><td><span class="linehit">put_end(prio,&nbsp;process)&nbsp;<span class="comment">/*&nbsp;Put&nbsp;process&nbsp;at&nbsp;end&nbsp;of&nbsp;queue&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">271</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;prio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">272</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;*process;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">273</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">274</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;**next;</span></td></tr>
+<tr><td class="profile"> 167</td><td class="profile"> 64320</td><td class="profile_line">275</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(prio&nbsp;&gt;&nbsp;MAXPRIO&nbsp;||&nbsp;prio&nbsp;&lt;&nbsp;0)&nbsp;<span class="keyword">return</span>(BADPRIO);&nbsp;<span class="comment">/*&nbsp;Somebody&nbsp;goofed&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 106</td><td class="profile"></td><td class="profile_line">275</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;1: T || _</span></td></tr>
+<tr><td class="profile"> 61</td><td class="profile"></td><td class="profile_line">275</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;2: F || T</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 64320</td><td class="profile_line">275</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;3: F || F</span></td></tr>
+<tr><td class="profile"> 167</td><td class="profile"></td><td class="profile_line">275</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;return ( - 4 )</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">276</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;find&nbsp;end&nbsp;of&nbsp;queue&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 91923</td><td class="profile"> 64320</td><td class="profile_line">277</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(next&nbsp;=&nbsp;&amp;prio_queue[prio].head;&nbsp;*next;&nbsp;next&nbsp;=&nbsp;&amp;(*next)-&gt;next);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">278</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;*next&nbsp;=&nbsp;process;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">279</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;prio_queue[prio].length++;</span></td></tr>
+<tr><td class="profile"> 64320</td><td class="profile"></td><td class="profile_line">280</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(OK);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">281</td><td><a title="Function put_end()
+TER 100 % ( 10/10) structural, 100 % (10/10) statement"><span class="lineplain">}</span></a></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">282</td><td><span class="lineplain"></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">283</td><td><span class="lineplain"><span class="keyword">int</span>&nbsp;</span></td></tr>
+<tr><td class="top" colspan="4"><a href="indexD1.html" title="/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c">Top</a></td></tr>
+<tr><td class="profile"><a id="a16"></a> 230047</td><td class="profile"></td><td class="profile_line">284</td><td><span class="linehit">get_process(prio,&nbsp;ratio,&nbsp;job)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">285</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;prio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">286</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span>&nbsp;ratio;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">287</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;**&nbsp;job;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">288</td><td><span class="lineplain">{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">289</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span>&nbsp;length,&nbsp;index;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">290</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span>&nbsp;process&nbsp;**next;</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"> 230047</td><td class="profile_line"><a href="indexD1.html#ut9" id="ut8">291</a></td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(prio&nbsp;&gt;&nbsp;MAXPRIO&nbsp;||&nbsp;prio&nbsp;&lt;&nbsp;0)&nbsp;<span class="keyword">return</span>(BADPRIO);&nbsp;<span class="comment">/*&nbsp;Somebody&nbsp;goofed&nbsp;*/</span></span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"></td><td class="profile_line"><a href="indexD1.html#ut10" id="ut9">291</a></td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;1: T || _</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"></td><td class="profile_line"><a href="indexD1.html#ut11" id="ut10">291</a></td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;2: F || T</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 230047</td><td class="profile_line">291</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;3: F || F</span></td></tr>
+<tr><td class="tcolnhit"> 0</td><td class="profile"></td><td class="profile_line"><a href="indexD1.html#ut12" id="ut11">291</a></td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;return ( - 4 )</span></td></tr>
+<tr><td class="profile"> 271</td><td class="profile"> 229776</td><td class="profile_line">292</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(ratio&nbsp;&lt;&nbsp;0.0&nbsp;||&nbsp;ratio&nbsp;&gt;&nbsp;1.0)&nbsp;<span class="keyword">return</span>(BADRATIO);&nbsp;<span class="comment">/*&nbsp;Somebody&nbsp;else&nbsp;goofed&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 37</td><td class="profile"></td><td class="profile_line">292</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;1: T || _</span></td></tr>
+<tr><td class="profile"> 234</td><td class="profile"></td><td class="profile_line">292</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;2: F || T</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 229776</td><td class="profile_line">292</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;3: F || F</span></td></tr>
+<tr><td class="profile"> 271</td><td class="profile"></td><td class="profile_line">292</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;return ( - 5 )</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">293</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;length&nbsp;=&nbsp;prio_queue[prio].length;</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">294</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;=&nbsp;ratio&nbsp;*&nbsp;length;</span></td></tr>
+<tr><td class="profile"> 172714</td><td class="profile"> 57062</td><td class="profile_line">295</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;=&nbsp;index&nbsp;&gt;=&nbsp;length&nbsp;?&nbsp;length&nbsp;-1&nbsp;:&nbsp;index;&nbsp;<span class="comment">/*&nbsp;If&nbsp;ratio&nbsp;==&nbsp;1.0&nbsp;*/</span></span></td></tr>
+<tr><td class="profile"> 4451</td><td class="profile"> 229776</td><td class="profile_line">296</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span>(next&nbsp;=&nbsp;&amp;prio_queue[prio].head;&nbsp;index&nbsp;&amp;&amp;&nbsp;*next;&nbsp;index--)</span></td></tr>
+<tr><td class="profile"> 4451</td><td class="profile"></td><td class="profile_line">296</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;1: T &amp;&amp; T</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 172675</td><td class="profile_line">296</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;2: T &amp;&amp; F</span></td></tr>
+<tr><td class="profile"></td><td class="profile"> 57101</td><td class="profile_line">296</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;3: F &amp;&amp; _</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">297</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next&nbsp;=&nbsp;&amp;(*next)-&gt;next;&nbsp;<span class="comment">/*&nbsp;Count&nbsp;up&nbsp;to&nbsp;it&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">298</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;*job&nbsp;=&nbsp;*next;</span></td></tr>
+<tr><td class="profile"> 57101</td><td class="profile"> 172675</td><td class="profile_line">299</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(*job)</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">300</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;{</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">301</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;*next&nbsp;=&nbsp;(*next)-&gt;next;&nbsp;<span class="comment">/*&nbsp;Mend&nbsp;the&nbsp;chain&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">302</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;(*job)-&gt;next&nbsp;=&nbsp;(<span class="keyword">struct</span>&nbsp;process&nbsp;*)&nbsp;0;&nbsp;<span class="comment">/*&nbsp;break&nbsp;this&nbsp;link&nbsp;*/</span></span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">303</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;prio_queue[prio].length--;</span></td></tr>
+<tr><td class="profile"> 57101</td><td class="profile"></td><td class="profile_line">304</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>(TRUE);</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">305</td><td><span class="lineplain">&nbsp;&nbsp;&nbsp;&nbsp;}</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">306</td><td><span class="linehit">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span>&nbsp;<span class="keyword">return</span>(FALSE);</span></td></tr>
+<tr><td class="profile"> 172675</td><td class="profile"></td><td class="profile_line">306</td><td><span class="profile_descr">&nbsp;&nbsp;&nbsp;&nbsp;return ( 0 )</span></td></tr>
+<tr><td class="profile" colspan="2"></td><td class="profile_line">307</td><td><a title="Function get_process()
+TER 83 % ( 20/24) structural, 95 % (19/20) statement"><span class="lineplain">}</span></a></td></tr>
+</tbody>
+</table>
+<a id="ut12"></a>
+<span class="belowb">***TER</span><span class="belowb">92 % (136/147) of FILE schedule2.c</span><br>
+<span class="terindent"></span><span class="belowb">96 % (151/157) statement</span><br><br>
+<span class="pages"><a href="indexF.html" target="_top">Directory Summary</a> | <a href="index.html" target="_top">Files Summary</a> | <a href="indexB1.html" target="_top">Functions Summary</a> | <a href="indexU.html" target="_top">Untested Code</a> | <a href="indexD1.html">Execution Profile</a><br>
+To files: <a href="indexD1.html">First</a> | Previous | Next | <a href="indexD1.html">Last</a> | <a href="indexD1.html">Top</a> | <a href="indexA.html#a1">Index</a> | <a href="indexD1.html" target="_top">No Index</a></span><br><br>
+</body>
+</html>

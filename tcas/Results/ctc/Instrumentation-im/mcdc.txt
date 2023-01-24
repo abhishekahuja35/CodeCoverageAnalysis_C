@@ -1,0 +1,201 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Sun Nov  6 23:13:10 2022)
+Data file(s) used     : MON.dat (Sun Nov  6 23:13:32 2022)
+Listing produced at   : Sun Nov  6 23:21:42 2022
+Coverage view         : Reduced to MC/DC coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/tcas/versions.alt/versions.orig/v41/tcas.c
+INSTRUMENTATION MODE  : multicondition
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+      1578                 48 FUNCTION initialize()
+      1578                 54 }
+
+***TER 100 % (  2/  2) of FUNCTION initialize()
+       100 % (  4/  4) statement
+-----------------------------------------------------------------------------
+
+      1291                 56 FUNCTION ALIM()
+      1291                 58   return Positive_RA_Alt_Thresh [ Alt_Layer_Value ]
+                           59 }
+
+***TER 100 % (  2/  2) of FUNCTION ALIM()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+      1772                 61 FUNCTION Inhibit_Biased_Climb()
+      1078        694      63   ternary-?: Climb_Inhibit
+      1772                 63   return ( Climb_Inhibit ? Up_Separation + 100 : Up_Separation )
+                           64 }
+
+***TER 100 % (  4/  4) of FUNCTION Inhibit_Biased_Climb()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+       886                 66 FUNCTION Non_Crossing_Biased_Climb()
+       478        408      73   if (upward_preferred)
+       304        174      75     expr-andor: ! ( Own_Below_Threat ( ) ) || ( ( Own_Below_Threat ( ) ) && ( ! ( Down_Separation >= ALIM ( ) ) ) )
+       145                 75       1: !(T) || ((T) && (!(F)))
+       159                 75       2: !(F) || ((_) && (!(_)))
+                  174      75       3: !(T) || ((T) && (!(T)))
+                    0      75       4: !(T) || ((F) && (!(_)))
+                           75       MC/DC (cond 1): 2 + 3, 2 - 4
+                      -    75       MC/DC (cond 2): 1 - 4
+                           75       MC/DC (cond 3): 1 + 3
+                           76   }+
+                           77   else
+       146        262      79     expr-andor: ( Cur_Vertical_Sep >= 300 ) && ( Up_Separation >= ALIM ( ) )
+       146                 79       1: (T) && (T)
+                  262      79       2: (T) && (F)
+                    0      79       3: (F) && (_)
+                      -    79       MC/DC (cond 1): 1 - 3
+                           79       MC/DC (cond 2): 1 + 2
+                           80   }+
+       886                 81   return result
+                           82 }
+
+***TER  84 % ( 11/ 13) of FUNCTION Non_Crossing_Biased_Climb()
+       100 % (  8/  8) statement
+-----------------------------------------------------------------------------
+
+       886                 84 FUNCTION Non_Crossing_Biased_Descend()
+       478        408      91   if (upward_preferred)
+       174        304      93     expr-andor: Own_Below_Threat ( ) && ( Cur_Vertical_Sep >= 300 ) && ( Down_Separation >= ALIM ( ) )
+       174                 93       1: T && (T) && (T)
+                  145      93       2: T && (T) && (F)
+                    0      93       3: T && (F) && (_)
+                  159      93       4: F && (_) && (_)
+                           93       MC/DC (cond 1): 1 + 4
+                      -    93       MC/DC (cond 2): 1 - 3
+                           93       MC/DC (cond 3): 1 + 2
+                           94   }+
+                           95   else
+       286        122      97     expr-andor: ! ( Own_Above_Threat ( ) ) || ( ( Own_Above_Threat ( ) ) && ( Up_Separation >= ALIM ( ) ) )
+       123                 97       1: !(T) || ((T) && (T))
+       163                 97       2: !(F) || ((_) && (_))
+                  122      97       3: !(T) || ((T) && (F))
+                    0      97       4: !(T) || ((F) && (_))
+                           97       MC/DC (cond 1): 2 + 3, 2 - 4
+                      -    97       MC/DC (cond 2): 1 - 4
+                           97       MC/DC (cond 3): 1 + 3
+                           98   }+
+       886                 99   return result
+                          100 }
+
+***TER  85 % ( 12/ 14) of FUNCTION Non_Crossing_Biased_Descend()
+       100 % (  8/  8) statement
+-----------------------------------------------------------------------------
+
+      1725                102 FUNCTION Own_Below_Threat()
+      1725                104   return ( Own_Tracked_Alt < Other_Tracked_Alt )
+                          105 }
+
+***TER 100 % (  2/  2) of FUNCTION Own_Below_Threat()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+      1113                107 FUNCTION Own_Above_Threat()
+      1113                109   return ( Other_Tracked_Alt < Own_Tracked_Alt )
+                          110 }
+
+***TER 100 % (  2/  2) of FUNCTION Own_Above_Threat()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+      1578                112 FUNCTION alt_sep_test()
+      1039        539     118   expr-andor: High_Confidence && ( Own_Tracked_Alt_Rate <= 600 ) && ( Cur_Vertical_Sep > 600 )
+      1039                118     1: T && (T) && (T)
+                   94     118     2: T && (T) && (F)
+                   72     118     3: T && (F) && (_)
+                  373     118     4: F && (_) && (_)
+                          118     MC/DC (cond 1): 1 + 4
+                          118     MC/DC (cond 2): 1 + 3
+                          118     MC/DC (cond 3): 1 + 2
+       444       1134     120   expr-andor: Two_of_Three_Reports_Valid && Other_RAC == 0
+       444                120     1: T && T
+                  257     120     2: T && F
+                  877     120     3: F && _
+                          120     MC/DC (cond 1): 1 + 3
+                          120     MC/DC (cond 2): 1 + 2
+       886        692     124   if (enabled && ( ( tcas_equipped && intent_not_known ) || ! tcas_equipped ))
+       153                124     1: T && ((T && T) || _)
+         0                124     2: T && ((T && F) || T)
+       733                124     3: T && ((F && _) || T)
+                  153     124     4: T && ((T && F) || F)
+                    0     124     5: T && ((F && _) || F)
+                  539     124     6: F && ((_ && _) || _)
+                          124     MC/DC (cond 1): 1 + 6, 2 - 6, 3 + 6
+                      -   124     MC/DC (cond 2): 1 - 5
+                          124     MC/DC (cond 3): 1 + 4
+                      -   124     MC/DC (cond 4): 2 - 4, 3 - 5
+       168        718     126     expr-andor: Non_Crossing_Biased_Climb ( ) && Own_Below_Threat ( )
+       168                126       1: T && T
+                  282     126       2: T && F
+                  436     126       3: F && _
+                          126       MC/DC (cond 1): 1 + 3
+                          126       MC/DC (cond 2): 1 + 2
+       123        763     127     expr-andor: Non_Crossing_Biased_Descend ( ) && Own_Above_Threat ( )
+       123                127       1: T && T
+                  337     127       2: T && F
+                  426     127       3: F && _
+                          127       MC/DC (cond 1): 1 + 3
+                          127       MC/DC (cond 2): 1 + 2
+         0        886 -   128     if (need_upward_RA && need_downward_RA)
+         0                128       1: T && T
+                  168     128       2: T && F
+                  718     128       3: F && _
+                      -   128       MC/DC (cond 1): 1 - 3
+                      -   128       MC/DC (cond 2): 1 - 2
+                          132     }+
+       168        718     133     else if (need_upward_RA)
+                          134     }+
+       123        595     135     else if (need_downward_RA)
+                          136     }+
+                          137     else
+                          138     }+
+                          139   }+
+      1578                141   return alt_sep
+                          142 }
+
+***TER  84 % ( 28/ 33) of FUNCTION alt_sep_test()
+        94 % ( 17/ 18) statement
+-----------------------------------------------------------------------------
+
+      1608                144 FUNCTION main()
+        30       1578     148   if (argc < 13)
+                          156   }+
+         0            -   173 }
+
+***TER  75 % (  3/  4) of FUNCTION main()
+       100 % ( 22/ 22) statement
+-----------------------------------------------------------------------------
+
+
+***TER  86 % ( 66/ 76) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/tcas/versions.alt/versions.orig/v41/tcas.c
+        98 % ( 63/ 64) statement
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 9
+Source lines       : 173
+TER                : 86 % (66/76) MC/DC
+TER                : 98 % (63/64) statement

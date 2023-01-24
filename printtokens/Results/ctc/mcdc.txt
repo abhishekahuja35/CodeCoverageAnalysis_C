@@ -1,0 +1,386 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Nov  7 21:46:11 2022)
+Data file(s) used     : MON.dat (Mon Nov  7 21:46:23 2022)
+Listing produced at   : Mon Nov  7 21:49:29 2022
+Coverage view         : Reduced to MC/DC coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/printtokens/versions.alt/versions.orig/v7/print_tokens.c
+INSTRUMENTATION MODE  : multicondition
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+      4130                 25 FUNCTION main()
+        30       4100      32   if (argc > 2)
+                           36   }+
+     28862       4070      39   while (! is_eof_token ( ( token_ptr = get_token ( stream_ptr ) ) ))
+                           40   }+
+         0            -    43 }
+
+***TER  83 % (  5/  6) of FUNCTION main()
+       100 % ( 10/ 10) statement
+-----------------------------------------------------------------------------
+
+      4100                 60 FUNCTION open_character_stream()
+      2963       1137      68   if (FILENAME == ( ( void * ) 0 ))
+                           69   }+
+        30       1107      70   else if (( stream_ptr -> fp = fopen ( FILENAME , "r" ) ) == ( ( void * ) 0 ))
+                           74   }+
+      4070                 75   return ( stream_ptr )
+                           76 }
+
+***TER 100 % (  6/  6) of FUNCTION open_character_stream()
+       100 % ( 10/ 10) statement
+-----------------------------------------------------------------------------
+
+    175168                 89 FUNCTION get_char()
+     12791     162377      92   if (stream_ptr -> stream [ stream_ptr -> stream_ind ] == '\0')
+      4070       8721      94     if (fgets ( stream_ptr -> stream + 5 , 80 - 5 , stream_ptr -> fp ) == ( ( void * ) 0 ))
+                           95     }+
+                           97   }+
+    175168                 98   return ( stream_ptr -> stream [ ( stream_ptr -> stream_ind ) ++ ] )
+                           99 }
+
+***TER 100 % (  6/  6) of FUNCTION get_char()
+       100 % (  5/  5) statement
+-----------------------------------------------------------------------------
+
+     28823                112 FUNCTION is_end_of_character_stream()
+      4110      24713     115   if (stream_ptr -> stream [ stream_ptr -> stream_ind - 1 ] == ( - 1 ))
+      4110                116     return ( 1 )
+                          116   }+
+                          117   else
+     24713                118     return ( 0 )
+                          118   }-
+                          119 }
+
+***TER 100 % (  5/  5) of FUNCTION is_end_of_character_stream()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+     14196                131 FUNCTION unget_char()
+         0      14196 -   135   if (stream_ptr -> stream_ind == 0)
+         0            -   136     return
+                          136   }+
+                          137   else
+                          138   }+
+     14196                139   return
+                          140 }
+
+***TER  60 % (  3/  5) of FUNCTION unget_char()
+        75 % (  3/  4) statement
+-----------------------------------------------------------------------------
+
+      4100                155 FUNCTION open_token_stream()
+      4070                163   return ( token_ptr )
+                          164 }
+
+***TER 100 % (  2/  2) of FUNCTION open_token_stream()
+       100 % (  4/  4) statement
+-----------------------------------------------------------------------------
+
+     32932                179 FUNCTION get_token()
+    151628          0 -   191   while (! token_found)
+    151591         37     193     if (token_ind < 80)
+                          197     }+
+                          198     else
+                          201     }+
+     11126     140502     202     if (next_st == - 1)
+     11126                204       return ( error_or_eof_case ( tstream_ptr , token_ptr , cu_state , token_str , token_ind , ch ) )
+                          205     }+
+      2542     137960     205     else if (next_st == - 2)
+      2542                207       return ( numeric_case ( tstream_ptr , token_ptr , ch , token_str , token_ind ) )
+                          208     }+
+      8461     129499     208     else if (next_st == - 3)
+      8461                214       return ( token_ptr )
+                          215     }+
+                          217     switch (next_st)
+    116764                219     default:
+    116764                219       break
+       459                220     case 6:
+       449                221     case 9:
+       440                222     case 11:
+       415                223     case 13:
+       455                224     case 16:
+      2179         39     225       if (check_delimiter ( ch ) == 1)
+      2179                230         return ( token_ptr )
+                          231       }+
+        39                233       break
+       606                234     case 19:
+       652                235     case 20:
+       653                236     case 21:
+       671                237     case 22:
+       660                238     case 23:
+       654                239     case 24:
+       633                240     case 25:
+       502                241     case 32:
+      5031                243       return ( token_ptr )
+      1691                244     case 27:
+      1902                245     case 29:
+      3593                248       return ( token_ptr )
+      1893                249     case 30:
+      1893                252       break
+                          253     }+
+                          256   }-
+                          257 }
+
+***TER  97 % ( 38/ 39) of FUNCTION get_token()
+       100 % ( 46/ 46) statement
+-----------------------------------------------------------------------------
+
+      2542                268 FUNCTION numeric_case()
+       623       1919     274   if (check_delimiter ( ch ) != 1)
+      1807        588     277     while (check_delimiter ( ch ) == 0)
+        35       1772     279       if (token_ind >= 10)
+        35                279         break
+                          279       }+
+                          281     }+
+       623                286     return ( token_ptr )
+                          287   }+
+      1919                293   return ( token_ptr )
+                          294 }
+
+***TER 100 % ( 10/ 10) of FUNCTION numeric_case()
+       100 % ( 17/ 17) statement
+-----------------------------------------------------------------------------
+
+     11126                306 FUNCTION error_or_eof_case()
+      4070       7056     312   if (is_end_of_character_stream ( tstream_ptr -> ch_stream ))
+      4070                316     return ( token_ptr )
+                          317   }+
+       935       6121     318   if (cu_state != 0)
+                          322   }+
+      7056                326   return ( token_ptr )
+                          327 }
+
+***TER 100 % (  7/  7) of FUNCTION error_or_eof_case()
+       100 % ( 11/ 11) statement
+-----------------------------------------------------------------------------
+
+      7155                339 FUNCTION check_delimiter()
+      4686       2469     342   if (! isalpha ( ch ) && ! isdigit ( ch ))
+      4686                342     1: T && T
+                  230     342     2: T && F
+                 2239     342     3: F && _
+                          342     MC/DC (cond 1): 1 + 3
+                          342     MC/DC (cond 2): 1 + 2
+      4686                343     return ( 1 )
+                          343   }+
+      2469                344   return ( 0 )
+                          345 }
+
+***TER 100 % (  7/  7) of FUNCTION check_delimiter()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+      2179                356 FUNCTION keyword()
+                          359   switch (state)
+       451                361   case 6:
+       451                361     return ( 6 )
+       446                362   case 9:
+       446                362     return ( 9 )
+       429                363   case 11:
+       429                363     return ( 11 )
+       407                364   case 13:
+       407                364     return ( 13 )
+       446                365   case 16:
+       446                365     return ( 16 )
+         0            -   366   default:
+         0            -   366     break
+                          367   }-
+                          369 }
+
+***TER  84 % ( 11/ 13) of FUNCTION keyword()
+        66 % (  6/  9) statement
+-----------------------------------------------------------------------------
+
+      5031                381 FUNCTION special()
+                          384   switch (state)
+       606                386   case 19:
+       606                386     return ( 19 )
+       652                387   case 20:
+       652                387     return ( 20 )
+       653                388   case 21:
+       653                388     return ( 21 )
+       671                389   case 22:
+       671                389     return ( 22 )
+       660                390   case 23:
+       660                390     return ( 23 )
+       654                391   case 24:
+       654                391     return ( 24 )
+       633                392   case 25:
+       633                392     return ( 25 )
+       502                393   case 32:
+       502                393     return ( 32 )
+         0            -   394   default:
+         0            -   394     break
+                          395   }-
+                          397 }
+
+***TER  89 % ( 17/ 19) of FUNCTION special()
+        75 % (  9/ 12) statement
+-----------------------------------------------------------------------------
+
+      1893                410 FUNCTION skip()
+     17657       1893     416   while (( c = get_char ( stream_ptr ) ) != '\n' && ! is_end_of_character_stream ( stream_ptr ))
+     17657                416     1: T && T
+                   40     416     2: T && F
+                 1853     416     3: F && _
+                          416     MC/DC (cond 1): 1 + 3
+                          416     MC/DC (cond 2): 1 + 2
+                          417   }+
+        40       1853     418   if (c == ( - 1 ))
+                          418   }+
+      1893                419   return
+                          420 }
+
+***TER 100 % (  8/  8) of FUNCTION skip()
+       100 % (  6/  6) statement
+-----------------------------------------------------------------------------
+
+      3593                431 FUNCTION constant()
+                          435   switch (state)
+      1691                437   case 27:
+      1691                437     return ( 27 )
+      1902                438   case 29:
+      1902                438     return ( 29 )
+         0            -   439   default:
+         0            -   439     break
+                          440   }-
+                          441 }
+
+***TER  71 % (  5/  7) of FUNCTION constant()
+        80 % (  4/  5) statement
+-----------------------------------------------------------------------------
+
+    235379                454 FUNCTION next_state()
+     22092     213287     458   if (state < 0)
+     22092                459     return ( state )
+                          459   }+
+    202347      10940     460   if (base [ state ] + ch >= 0)
+    129499      72848     462     if (check [ base [ state ] + ch ] == state)
+    129499                463       return ( next [ base [ state ] + ch ] )
+                          463     }+
+                          464     else
+     72848                465       return ( next_state ( default1 [ state ] , ch ) )
+                          465     }-
+                          466   }+
+                          467   else
+     10940                468     return ( next_state ( default1 [ state ] , ch ) )
+                          468   }-
+                          469 }
+
+***TER 100 % ( 11/ 11) of FUNCTION next_state()
+       100 % (  7/  7) statement
+-----------------------------------------------------------------------------
+
+     32932                481 FUNCTION is_eof_token()
+      4070      28862     484   if (t -> token_id == 0)
+      4070                485     return ( 1 )
+                          485   }+
+     28862                486   return ( 0 )
+                          487 }
+
+***TER 100 % (  5/  5) of FUNCTION is_eof_token()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+     32932                503 FUNCTION print_token()
+                          506   switch (token_ptr -> token_id)
+      7679                508   case - 1:
+      7679                509     return ( 1 )
+      4070                510   case 0:
+      4070                510     return ( 1 )
+       451                511   case 6:
+       451                511     return ( 1 )
+       446                512   case 9:
+       446                512     return ( 1 )
+       429                513   case 11:
+       429                513     return ( 1 )
+       407                514   case 13:
+       407                514     return ( 1 )
+       446                515   case 16:
+       446                515     return ( 1 )
+      8461                516   case 17:
+      8461                517     return ( 1 )
+      1919                518   case 18:
+      1919                519     return ( 1 )
+       606                520   case 19:
+       606                520     return ( 1 )
+       652                521   case 20:
+       652                521     return ( 1 )
+       653                522   case 21:
+       653                522     return ( 1 )
+       671                523   case 22:
+       671                523     return ( 1 )
+       660                524   case 23:
+       660                524     return ( 1 )
+       654                525   case 24:
+       654                525     return ( 1 )
+       633                526   case 25:
+       633                526     return ( 1 )
+      1691                527   case 27:
+      1691                528     return ( 1 )
+      1902                529   case 29:
+      1902                530     return ( 1 )
+       502                531   case 32:
+       502                531     return ( 1 )
+         0            -   532   default:
+         0            -   532     break
+                          533   }-
+         0            -   534   return ( 0 )
+                          535 }
+
+***TER  92 % ( 39/ 42) of FUNCTION print_token()
+        96 % ( 49/ 51) statement
+-----------------------------------------------------------------------------
+
+     21652                547 FUNCTION get_actual_token()
+      2537      21652     553   for (;ind > 0 && isspace ( token_str [ ind - 1 ] );)
+      2537                553     1: T && T
+                21598     553     2: T && F
+                   54     553     3: F && _
+                          553     MC/DC (cond 1): 1 + 3
+                          553     MC/DC (cond 2): 1 + 2
+                          553   }+
+     36367         54     556   for (;ind < token_ind;)
+     21598      14769     557     if (! isspace ( token_str [ ind ] ))
+     21598                558       break
+                          558     }+
+                          558   }+
+    101754      21652     559   for (;ind <= token_ind;)
+                          561   }+
+     21652                562   return
+                          563 }
+
+***TER 100 % ( 13/ 13) of FUNCTION get_actual_token()
+       100 % ( 17/ 17) statement
+-----------------------------------------------------------------------------
+
+
+***TER  93 % (198/211) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/printtokens/versions.alt/versions.orig/v7/print_tokens.c
+        95 % (213/223) statement
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 18
+Source lines       : 563
+TER                : 93 % (198/211) MC/DC
+TER                : 95 % (213/223) statement

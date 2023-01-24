@@ -1,0 +1,268 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Nov  7 19:35:27 2022)
+Data file(s) used     : MON.dat (Mon Nov  7 19:36:03 2022)
+Listing produced at   : Mon Nov  7 19:43:57 2022
+Coverage view         : As instrumented
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule/versions.alt/versions.orig/v9/schedule.c
+INSTRUMENTATION MODE  : multicondition
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+     40489                 38 FUNCTION new_ele()
+     40489                 47   return ele
+                           48 }
+
+***TER 100 % (  2/  2) of FUNCTION new_ele()
+       100 % (  6/  6) statement
+-----------------------------------------------------------------------------
+
+      9670                 56 FUNCTION new_list()
+      9670                 65   return ( list )
+                           66 }
+
+***TER 100 % (  2/  2) of FUNCTION new_list()
+       100 % (  6/  6) statement
+-----------------------------------------------------------------------------
+
+     61463                 73 FUNCTION append_ele()
+      1810      59653      77   if (! a_list)
+                           78   }+
+     33960      27503      81   if (a_list -> last)
+                           82   }+
+                           83   else
+                           84   }+
+     61463                 88   return ( a_list )
+                           89 }
+
+***TER 100 % (  6/  6) of FUNCTION append_ele()
+       100 % ( 10/ 10) statement
+-----------------------------------------------------------------------------
+
+     12573                 95 FUNCTION find_nth()
+         0      12573 -   102   if (! f_list)
+         0            -   103     return 0
+                          103   }+
+      4681      12573     105   for (;f_ele && ( i < n );)
+      4681                105     1: T && (T)
+                 8203     105     2: T && (F)
+                 4370     105     3: F && (_)
+                          106   }+
+     12573                107   return f_ele
+                          108 }
+
+***TER  80 % (  8/ 10) of FUNCTION find_nth()
+        90 % (  9/ 10) statement
+-----------------------------------------------------------------------------
+
+     52374                116 FUNCTION del_ele()
+         0      52374 -   120   if (! d_list || ! d_ele)
+         0            -   120     1: T || _
+         0            -   120     2: F || T
+                52374     120     3: F || F
+         0            -   121     return ( 0 )
+                          121   }+
+     27057      25317     123   if (d_ele -> next)
+                          124   }+
+                          125   else
+                          126   }+
+      2429      49945     127   if (d_ele -> prev)
+                          128   }+
+                          129   else
+                          130   }+
+     52374                133   return ( d_list )
+                          134 }
+
+***TER  66 % (  8/ 12) of FUNCTION del_ele()
+        90 % (  9/ 10) statement
+-----------------------------------------------------------------------------
+
+     31400                141 FUNCTION free_ele()
+     31400                145 }
+
+***TER 100 % (  2/  2) of FUNCTION free_ele()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+     42243                154 FUNCTION finish_process()
+     31400      10843     157   if (cur_proc)
+                          162   }+
+     42243                163 }
+
+***TER 100 % (  4/  4) of FUNCTION finish_process()
+       100 % (  5/  5) statement
+-----------------------------------------------------------------------------
+
+     10930                166 FUNCTION finish_all_processes()
+     34080      10930     171   for (;i < total;)
+                          172   }+
+     10930                173 }
+
+***TER 100 % (  4/  4) of FUNCTION finish_all_processes()
+       100 % (  7/  7) statement
+-----------------------------------------------------------------------------
+
+     66209                175 FUNCTION schedule()
+    146481      22038     180   for (;i > 0;)
+     44171     102310     182     if (prio_queue [ i ] -> mem_count > 0)
+     44171                186       return
+                          187     }+
+                          188   }+
+     22038                189 }
+
+***TER 100 % (  7/  7) of FUNCTION schedule()
+       100 % (  9/  9) statement
+-----------------------------------------------------------------------------
+
+     11787                192 FUNCTION upgrade_process_prio()
+       878      10909     201   if (prio >= 3)
+       878                202     return
+                          202   }+
+      3402       7507     207   if (count > 0)
+      3360         42     211     if (proc)
+                          216     }+
+                          217   }+
+     10909                218 }
+
+***TER 100 % (  9/  9) of FUNCTION upgrade_process_prio()
+       100 % ( 16/ 16) statement
+-----------------------------------------------------------------------------
+
+     12500                221 FUNCTION unblock_process()
+      9171       3329     228   if (block_queue)
+      4843       4328     233     if (proc)
+                          238     }+
+                          239   }+
+     12500                240 }
+
+***TER 100 % (  6/  6) of FUNCTION unblock_process()
+       100 % ( 12/ 12) statement
+-----------------------------------------------------------------------------
+
+     11866                242 FUNCTION quantum_expire()
+      6351       5515     246   if (cur_proc)
+                          250   }+
+     11866                251 }
+
+***TER 100 % (  4/  4) of FUNCTION quantum_expire()
+       100 % (  5/  5) statement
+-----------------------------------------------------------------------------
+
+     12100                254 FUNCTION block_process()
+      6420       5680     257   if (cur_proc)
+                          260   }+
+     12100                261 }
+
+***TER 100 % (  4/  4) of FUNCTION block_process()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+     40489                263 FUNCTION new_process()
+     40489                270   return proc
+                          271 }
+
+***TER 100 % (  2/  2) of FUNCTION new_process()
+       100 % (  5/  5) statement
+-----------------------------------------------------------------------------
+
+     12956                273 FUNCTION add_process()
+     12956                279 }
+
+***TER 100 % (  2/  2) of FUNCTION add_process()
+       100 % (  3/  3) statement
+-----------------------------------------------------------------------------
+
+      7860                281 FUNCTION init_prio_queue()
+     27533       7860     290   for (;i < num_proc;)
+                          294   }+
+      7860                296 }
+
+***TER 100 % (  4/  4) of FUNCTION init_prio_queue()
+       100 % ( 10/ 10) statement
+-----------------------------------------------------------------------------
+
+      2620                298 FUNCTION initialize()
+      2620                302 }
+
+***TER 100 % (  2/  2) of FUNCTION initialize()
+       100 % (  2/  2) statement
+-----------------------------------------------------------------------------
+
+      2627                305 FUNCTION main()
+         7       2620     314   if (argc < ( 3 ))
+         7                317     return
+                          318   }+
+      7860       2620     321   for (;prio >= 1;)
+                          324   }+
+     80521       2423     326   for (;( ( status != ( - 1 ) ) && status );)
+     80521                326     1: ((T) && T)
+                   20     326     2: ((T) && F)
+                 2403     326     3: ((F) && _)
+                          329     switch (command)
+      8163                331     case 6:
+      8163                333       break
+     12100                334     case 3:
+     12100                336       break
+     11866                337     case 5:
+     11866                339       break
+     12500                340     case 4:
+     12500                343       break
+     11817                344     case 2:
+        30      11787     347       if (prio > 3 || prio <= 0)
+        18                347         1: T || _
+        12                347         2: F || T
+                11787     347         3: F || F
+        30                349         return
+                          350       }+
+                          351       else
+                          352       }+
+     11787                353       break
+     13123                354     case 1:
+       167      12956     356       if (prio > 3 || prio <= 0)
+        53                356         1: T || _
+       114                356         2: F || T
+                12956     356         3: F || F
+       167                358         return
+                          359       }+
+                          360       else
+                          361       }+
+     12956                362       break
+     10930                363     case 7:
+     10930                365       break
+        22                366     missing-default:
+                          366     }+
+                          367   }+
+      2423                368 }
+
+***TER 100 % ( 39/ 39) of FUNCTION main()
+       100 % ( 40/ 40) statement
+-----------------------------------------------------------------------------
+
+
+***TER  95 % (115/121) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule/versions.alt/versions.orig/v9/schedule.c
+        98 % (158/160) statement
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 18
+Source lines       : 368
+TER                : 95 % (115/121) multicondition
+TER                : 98 % (158/160) statement

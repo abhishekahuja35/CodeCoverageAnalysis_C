@@ -1,0 +1,189 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Nov  7 16:37:38 2022)
+Data file(s) used     : MON.dat (Mon Nov  7 16:38:08 2022)
+Listing produced at   : Mon Nov  7 16:38:41 2022
+Coverage view         : Reduced to decision coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c
+INSTRUMENTATION MODE  : multicondition
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+      1052                 41 FUNCTION main()
+      8310        679      55   while (fgets ( line , 256 , __stdinp ) != ( ( void * ) 0 ))
+      6544       8310      57     for (;* p != '\0' && isspace ( ( int ) * p );)
+                           58     }+
+      3703       4607      60     if (* p == '\0')
+      3703                 61       continue
+                           61     }+
+      1453       3154      63     if (* p == '#')
+      1453                 66       continue
+                           67     }+
+        76       3078      69     if (sscanf ( p , "%d %d\n" , & r , & c ) != 2)
+        76                 72       return 1
+                           73     }+
+       191       2887      75     if (r * c > 1000)
+       191                 78       return 1
+                           79     }+
+     19972       2781      83     for (;i < r;)
+    201224      19866      84       for (;j < c;)
+       106     201118      85         if (scanf ( " %ld" , & f [ ( i ) * c + ( j ) ] ) != 1)
+       106                 90           return 1
+                           91         }+
+                           91       }+
+                           91     }+
+      1803        978      99     if (info >= 0.0)
+                          107     }+
+                          108     else
+         0        978 -   109       ternary-?: info < - 3.5
+       357        621     110       ternary-?: info < - 2.5
+       179        442     111       ternary-?: info < - 1.5
+                          114     }+
+                          115   }+
+       165        514     117   if (totdf <= 0)
+       165                120     return 1
+                          121   }+
+       514                127   return 0
+                          128 }
+
+***TER  97 % ( 35/ 36) of FUNCTION main()
+       100 % ( 44/ 44) statement
+-----------------------------------------------------------------------------
+
+      2172                150 FUNCTION LGamma()
+       171       2001     162   if (-- x < 0.0)
+       171                166     return log ( pix / sin ( pix ) ) - LGamma ( 1.0 - x )
+                          167   }+
+     12006       2001     174   for (;j < 6;)
+                          175   }+
+      2001                177   return - tmp + log ( 2.50662827465 * ser )
+                          178 }
+
+***TER 100 % (  7/  7) of FUNCTION LGamma()
+       100 % ( 14/ 14) statement
+-----------------------------------------------------------------------------
+
+       819                184 FUNCTION gser()
+       316        503     191   if (x <= 0.0)
+       316                192     return 0.0
+                          192   }+
+      3789          0 -   196   for (;n <= 100;)
+       503       3286     200     if (( ( del ) < 0 ? - ( del ) : ( del ) ) < ( ( sum ) < 0 ? - ( sum ) : ( sum ) ) * 3.0e-7)
+         0       3789 -   200     ternary-?: ( del ) < 0
+         0       3789 -   200     ternary-?: ( sum ) < 0
+       503                201       return sum * exp ( - x + a * log ( x ) - LGamma ( a ) )
+                          201     }+
+                          202   }-
+                          205 }
+
+***TER  76 % ( 10/ 13) of FUNCTION gser()
+       100 % ( 11/ 11) statement
+-----------------------------------------------------------------------------
+
+      1498                208 FUNCTION gcf()
+      2996          0 -   215   for (;n <= 100;)
+      2996          0 -   227     if (a1 != 0.0)
+      1498       1498     233       if (( ( gold ) < 0 ? - ( gold ) : ( gold ) ) < 3.0e-7 * ( ( g ) < 0 ? - ( g ) : ( g ) ))
+       366       2630     233       ternary-?: ( gold ) < 0
+         0       2996 -   233       ternary-?: ( g ) < 0
+      1498                234         return exp ( - x + a * log ( x ) - LGamma ( a ) ) * g
+                          234       }+
+                          237     }+
+                          238   }-
+                          241 }
+
+***TER  75 % (  9/ 12) of FUNCTION gcf()
+       100 % ( 19/ 19) statement
+-----------------------------------------------------------------------------
+
+      2317                244 FUNCTION QGamma()
+       819       1498     248   ternary-?: x < a + 1.0
+      2317                248   return x < a + 1.0 ? 1.0 - gser ( a , x ) : gcf ( a , x )
+                          249 }
+
+***TER 100 % (  4/  4) of FUNCTION QGamma()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+      2317                252 FUNCTION QChiSq()
+      2317                256   return QGamma ( ( double ) df / 2.0 , chisq / 2.0 )
+                          257 }
+
+***TER 100 % (  2/  2) of FUNCTION QChiSq()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+      2781                293 FUNCTION InfoTbl()
+       357       2424     308   if (rdf <= 0 || cdf <= 0)
+       357                311     goto ret3
+                          312   }+
+         0       2424 -   316   if (( xi = ( double * ) malloc ( r * sizeof ( double ) ) ) == ( ( void * ) 0 ))
+         0            -   319     goto ret3
+                          320   }+
+         0       2424 -   322   if (( xj = ( double * ) malloc ( c * sizeof ( double ) ) ) == ( ( void * ) 0 ))
+         0            -   325     goto ret2
+                          326   }+
+     17744       2245     332   for (;i < r;)
+    197175      17565     336     for (;j < c;)
+       179     196996     340       if (k < 0L)
+       179                343         goto ret1
+                          344       }+
+                          347     }+
+                          350   }+
+       244       2001     352   if (N <= 0.0)
+       244                355     goto ret1
+                          356   }+
+     15809       2001     360   for (;j < c;)
+    191490      15809     364     for (;i < r;)
+                          365     }+
+                          368   }+
+     16724       2001     374   for (;i < r;)
+     16102        622     378     if (pi > 0.0)
+                          379     }+
+    191490      16724     381     for (;j < c;)
+    185581       5909     385       if (pij > 0.0)
+                          386       }+
+                          387     }+
+                          388   }+
+     15809       2001     390   for (;j < c;)
+     15308        501     394     if (pj > 0.0)
+                          395     }+
+                          396   }+
+                          400   ret1:+
+                          402   ret2:
+                          404   ret3:+
+      2781                405   return info
+                          406 }
+
+***TER  89 % ( 33/ 37) of FUNCTION InfoTbl()
+        94 % ( 63/ 67) statement
+-----------------------------------------------------------------------------
+
+
+***TER  90 % (100/111) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c
+        97 % (153/157) statement
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 7
+Source lines       : 406
+TER                : 90 % (100/111) decision
+TER                : 97 % (153/157) statement

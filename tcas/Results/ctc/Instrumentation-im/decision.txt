@@ -1,0 +1,130 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Sun Nov  6 23:13:10 2022)
+Data file(s) used     : MON.dat (Sun Nov  6 23:13:32 2022)
+Listing produced at   : Sun Nov  6 23:14:45 2022
+Coverage view         : Reduced to decision coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/tcas/versions.alt/versions.orig/v41/tcas.c
+INSTRUMENTATION MODE  : multicondition
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+      1578                 48 FUNCTION initialize()
+      1578                 54 }
+
+***TER 100 % (  2/  2) of FUNCTION initialize()
+       100 % (  4/  4) statement
+-----------------------------------------------------------------------------
+
+      1291                 56 FUNCTION ALIM()
+      1291                 58   return Positive_RA_Alt_Thresh [ Alt_Layer_Value ]
+                           59 }
+
+***TER 100 % (  2/  2) of FUNCTION ALIM()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+      1772                 61 FUNCTION Inhibit_Biased_Climb()
+      1078        694      63   ternary-?: Climb_Inhibit
+      1772                 63   return ( Climb_Inhibit ? Up_Separation + 100 : Up_Separation )
+                           64 }
+
+***TER 100 % (  4/  4) of FUNCTION Inhibit_Biased_Climb()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+       886                 66 FUNCTION Non_Crossing_Biased_Climb()
+       478        408      73   if (upward_preferred)
+                           76   }+
+                           77   else
+                           80   }+
+       886                 81   return result
+                           82 }
+
+***TER 100 % (  4/  4) of FUNCTION Non_Crossing_Biased_Climb()
+       100 % (  8/  8) statement
+-----------------------------------------------------------------------------
+
+       886                 84 FUNCTION Non_Crossing_Biased_Descend()
+       478        408      91   if (upward_preferred)
+                           94   }+
+                           95   else
+                           98   }+
+       886                 99   return result
+                          100 }
+
+***TER 100 % (  4/  4) of FUNCTION Non_Crossing_Biased_Descend()
+       100 % (  8/  8) statement
+-----------------------------------------------------------------------------
+
+      1725                102 FUNCTION Own_Below_Threat()
+      1725                104   return ( Own_Tracked_Alt < Other_Tracked_Alt )
+                          105 }
+
+***TER 100 % (  2/  2) of FUNCTION Own_Below_Threat()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+      1113                107 FUNCTION Own_Above_Threat()
+      1113                109   return ( Other_Tracked_Alt < Own_Tracked_Alt )
+                          110 }
+
+***TER 100 % (  2/  2) of FUNCTION Own_Above_Threat()
+       100 % (  1/  1) statement
+-----------------------------------------------------------------------------
+
+      1578                112 FUNCTION alt_sep_test()
+       886        692     124   if (enabled && ( ( tcas_equipped && intent_not_known ) || ! tcas_equipped ))
+         0        886 -   128     if (need_upward_RA && need_downward_RA)
+                          132     }+
+       168        718     133     else if (need_upward_RA)
+                          134     }+
+       123        595     135     else if (need_downward_RA)
+                          136     }+
+                          137     else
+                          138     }+
+                          139   }+
+      1578                141   return alt_sep
+                          142 }
+
+***TER  90 % (  9/ 10) of FUNCTION alt_sep_test()
+        94 % ( 17/ 18) statement
+-----------------------------------------------------------------------------
+
+      1608                144 FUNCTION main()
+        30       1578     148   if (argc < 13)
+                          156   }+
+         0            -   173 }
+
+***TER  75 % (  3/  4) of FUNCTION main()
+       100 % ( 22/ 22) statement
+-----------------------------------------------------------------------------
+
+
+***TER  94 % ( 32/ 34) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/tcas/versions.alt/versions.orig/v41/tcas.c
+        98 % ( 63/ 64) statement
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 9
+Source lines       : 173
+TER                : 94 % (32/34) decision
+TER                : 98 % (63/64) statement

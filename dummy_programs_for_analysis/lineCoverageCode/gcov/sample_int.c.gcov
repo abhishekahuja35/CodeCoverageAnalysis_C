@@ -1,0 +1,30 @@
+        -:    0:Source:sample_int.c
+        -:    0:Graph:sample_int.gcno
+        -:    0:Data:sample_int.gcda
+        -:    0:Runs:4
+        -:    1:#include <stdio.h>
+        -:    2:#include <stdbool.h>
+        -:    3:
+        3:    4:dummy_call(int b)
+        -:    5:{
+        3:    6:    exit(b);
+        -:    7:}
+        -:    8:
+        4:    9:int alt_sample_int(int a)
+        -:   10:{
+        -:   11:    int sample_int;
+        4:   12:    if (a==1)
+        -:   13:    {
+        1:   14:        sample_int = 0;
+        1:   15:        return sample_int;
+        -:   16:    }
+       3*:   17:    dummy_call(0);}
+        -:   18:
+        4:   19:main()
+        -:   20:{
+        -:   21:    int input;
+        4:   22:    printf("Enter the value:");
+        4:   23:    scanf("%d", &input);
+        4:   24:    int returned_val = alt_sample_int(input);
+        1:   25:    printf("The returned val is %d", returned_val);
+        -:   26:}

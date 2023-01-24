@@ -1,0 +1,60 @@
+CTC++ sym 9
+Mon Nov  7 17:18:45 2022
+@/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule/versions.alt/versions.orig/v9/schedule.c
+1 1667859525 F3C9EA80 0 0
+0 38 0 0 0 new_ele
+90 0 0 0 0 ( new_num )
+2 48 6 0 0 new_ele
+0 56 0 1 0 new_list
+90 0 0 0 0 ( )
+2 66 6 0 0 new_list
+0 73 0 2 0 append_ele
+90 0 0 0 0 ( a_list , a_ele )
+2 89 8 0 0 append_ele
+0 95 0 3 0 find_nth
+90 0 0 0 0 ( f_list , n )
+2 108 8 0 0 find_nth
+0 116 0 4 0 del_ele
+90 0 0 0 0 ( d_list , d_ele )
+2 134 7 0 0 del_ele
+0 141 0 5 0 free_ele
+90 0 0 0 0 ( ptr )
+2 145 1 0 0 free_ele
+0 154 0 6 0 finish_process
+90 0 0 0 0 ( )
+2 163 4 0 0 finish_process
+0 166 0 7 0 finish_all_processes
+90 0 0 0 0 ( )
+2 173 6 0 0 finish_all_processes
+0 175 0 8 0 schedule
+90 0 0 0 0 ( )
+2 189 7 0 0 schedule
+0 192 0 9 0 upgrade_process_prio
+90 0 0 0 0 ( prio , ratio )
+2 218 13 0 0 upgrade_process_prio
+0 221 0 10 0 unblock_process
+90 0 0 0 0 ( ratio )
+2 240 10 0 0 unblock_process
+0 242 0 11 0 quantum_expire
+90 0 0 0 0 ( )
+2 251 4 0 0 quantum_expire
+0 254 0 12 0 block_process
+90 0 0 0 0 ( )
+2 261 2 0 0 block_process
+0 263 0 13 0 new_process
+90 0 0 0 0 ( prio )
+2 271 5 0 0 new_process
+0 273 0 14 0 add_process
+90 0 0 0 0 ( prio )
+2 279 3 0 0 add_process
+0 281 0 15 0 init_prio_queue
+90 0 0 0 0 ( prio , num_proc )
+2 296 9 0 0 init_prio_queue
+0 298 0 16 0 initialize
+90 0 0 0 0 ( )
+2 302 2 0 0 initialize
+0 305 0 17 0 main
+90 0 0 0 0 ( argc , argv )
+2 368 34 0 0 main
+%368,18,0,0,0,0
+END OF SYMBOLFILE

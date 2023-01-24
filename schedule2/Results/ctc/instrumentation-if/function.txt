@@ -1,0 +1,55 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Nov  7 20:20:08 2022)
+Data file(s) used     : MON.dat (Mon Nov  7 20:20:20 2022)
+Listing produced at   : Mon Nov  7 20:20:50 2022
+Coverage view         : Reduced to function coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c
+INSTRUMENTATION MODE  : function
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+     62145                 23 FUNCTION enqueue()
+      2710                 42 FUNCTION main()
+     90443                 69 FUNCTION get_command()
+      2710                 98 FUNCTION exit_here()
+     41352                106 FUNCTION new_job()
+     12314                129 FUNCTION upgrade_prio()
+     12700                143 FUNCTION block()
+     13134                156 FUNCTION unblock()
+     12358                167 FUNCTION quantum_expire()
+     48538                180 FUNCTION finish()
+     11525                196 FUNCTION flush()
+    168230                204 FUNCTION get_current()
+     94634                218 FUNCTION reschedule()
+     87794                231 FUNCTION schedule()
+     64487                270 FUNCTION put_end()
+    230047                284 FUNCTION get_process()
+
+***TER 100 % ( 16/ 16) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/schedule2/versions.alt/versions.orig/v10/schedule2.c
+       100 % (  0/  0) statement (N.A. for 16 functions)
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 16
+Source lines       : 307
+TER                : 100 % (16/16) function
+TER                : 100 % (0/0) statement (N.A. for 16 functions)

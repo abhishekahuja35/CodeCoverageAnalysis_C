@@ -1,0 +1,46 @@
+*****************************************************************************
+*         CTC++, Test Coverage Analyzer for C/C++, Version 9.1.4.1          *
+*                                                                           *
+*                         EXECUTION PROFILE LISTING                         *
+*                                                                           *
+*                    Copyright (c) 1993-2013 Testwell Oy                    *
+*             Copyright (c) 2013-2022 Verifysoft Technology GmbH            *
+*****************************************************************************
+
+
+Symbol file(s) used   : MON.sym (Mon Nov  7 16:27:42 2022)
+Data file(s) used     : MON.dat (Mon Nov  7 16:27:55 2022)
+Listing produced at   : Mon Nov  7 16:28:29 2022
+Coverage view         : Reduced to function coverage
+
+
+
+MONITORED SOURCE FILE : /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c
+INSTRUMENTATION MODE  : function
+
+ HITS/TRUE      FALSE    LINE DESCRIPTION
+=============================================================================
+
+      1052                 41 FUNCTION main()
+      2172                150 FUNCTION LGamma()
+       819                184 FUNCTION gser()
+      1498                208 FUNCTION gcf()
+      2317                244 FUNCTION QGamma()
+      2317                252 FUNCTION QChiSq()
+      2781                293 FUNCTION InfoTbl()
+
+***TER 100 % (  7/  7) of FILE /Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c
+       100 % (  0/  0) statement (N.A. for 7 functions)
+-----------------------------------------------------------------------------
+
+
+
+SUMMARY
+=======
+
+Source files       : 1
+Headers extracted  : 0
+Functions          : 7
+Source lines       : 406
+TER                : 100 % (7/7) function
+TER                : 100 % (0/0) statement (N.A. for 7 functions)

@@ -1,0 +1,27 @@
+CTC++ sym 9
+Mon Nov  7 16:27:42 2022
+@/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/totinfo/versions.alt/versions.orig/v23/tot_info.c
+1 1667856462 4724C62E 0 0
+0 41 0 0 0 main
+90 0 0 0 0 ( argc , argv )
+2 128 33 0 0 main
+0 150 0 1 0 LGamma
+90 0 0 0 0 ( double z )
+2 178 12 0 0 LGamma
+0 184 0 2 0 gser
+90 0 0 0 0 ( a , x )
+2 205 8 0 0 gser
+0 208 0 3 0 gcf
+90 0 0 0 0 ( a , x )
+2 241 16 0 0 gcf
+0 244 0 4 0 QGamma
+90 0 0 0 0 ( double a , double x )
+2 249 1 0 0 QGamma
+0 252 0 5 0 QChiSq
+90 0 0 0 0 ( double chisq , int nu )
+2 257 1 0 0 QChiSq
+0 293 0 6 0 InfoTbl
+90 0 0 0 0 ( int r , int c , const long * f , int * pdf )
+2 406 52 0 0 InfoTbl
+%406,7,0,0,0,0
+END OF SYMBOLFILE

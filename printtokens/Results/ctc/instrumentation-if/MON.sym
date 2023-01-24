@@ -1,0 +1,60 @@
+CTC++ sym 9
+Mon Nov  7 21:43:17 2022
+@/Users/abhishekahuja/Documents/Fall2022/SoftwareValidationFinal/printtokens/versions.alt/versions.orig/v7/print_tokens.c
+1 1667875397 C12A9DF1 0 0
+0 25 0 0 0 main
+90 0 0 0 0 ( argc , argv )
+2 43 8 0 0 main
+0 60 0 1 0 open_character_stream
+90 0 0 0 0 ( )
+2 76 8 0 0 open_character_stream
+0 89 0 2 0 get_char
+90 0 0 0 0 ( )
+2 99 3 0 0 get_char
+0 112 0 3 0 is_end_of_character_stream
+90 0 0 0 0 ( )
+2 119 2 0 0 is_end_of_character_stream
+0 131 0 4 0 unget_char
+90 0 0 0 0 ( ch , stream_ptr )
+2 140 3 0 0 unget_char
+0 155 0 5 0 open_token_stream
+90 0 0 0 0 ( )
+2 164 4 0 0 open_token_stream
+0 179 0 6 0 get_token
+90 0 0 0 0 ( )
+2 257 39 0 0 get_token
+0 268 0 7 0 numeric_case
+90 0 0 0 0 ( )
+2 294 14 0 0 numeric_case
+0 306 0 8 0 error_or_eof_case
+90 0 0 0 0 ( )
+2 327 9 0 0 error_or_eof_case
+0 339 0 9 0 check_delimiter
+90 0 0 0 0 ( )
+2 345 2 0 0 check_delimiter
+0 356 0 10 0 keyword
+90 0 0 0 0 ( int state )
+2 369 8 0 0 keyword
+0 381 0 11 0 special
+90 0 0 0 0 ( int state )
+2 397 11 0 0 special
+0 410 0 12 0 skip
+90 0 0 0 0 ( character_stream stream_ptr )
+2 420 4 0 0 skip
+0 431 0 13 0 constant
+90 0 0 0 0 ( int state , char token_str [ ] , int token_ind )
+2 441 4 0 0 constant
+0 454 0 14 0 next_state
+90 0 0 0 0 ( )
+2 469 4 0 0 next_state
+0 481 0 15 0 is_eof_token
+90 0 0 0 0 ( )
+2 487 2 0 0 is_eof_token
+0 503 0 16 0 print_token
+90 0 0 0 0 ( token_ptr )
+2 535 50 0 0 print_token
+0 547 0 17 0 get_actual_token
+90 0 0 0 0 ( char token_str [ ] , int token_ind )
+2 563 13 0 0 get_actual_token
+%563,18,0,0,0,0
+END OF SYMBOLFILE
